@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<title>Cotizar</title>
+     <link rel="icon" type="image/png" href="img/logoicon.png">
+
+
+	<style>
+	.carrito {
+    width: 90%;
+    min-height: 300px;
+    background: white;
+    border: 2px solid #e2e4e9;
+    border-radius: 8px;
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+
+.carrito h2 {
+    margin-top: 0;
+    color: #0B2545;
+}
+
+.itemCarrito {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 12px ;
+    border: 1px solid #ddd;
+	margin-top: 10px;
+	border-radius: 7px;
+	
+
+}
+
+.inforepuesto {
+        flex: 1;
+    display: flex;
+    flex-direction: column;
+	
+}
+
+.repuesto {
+    font-weight: bold;
+	font-size: x-large;
+}
+
+.precio{
+    color: #D90429;
+    font-weight: bold;
+}
+
+.botonEliminar {
+    background: #D90429;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: auto;
+    align-self: center;
+    
+
+}
+
+
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+#total {
+    color: #D90429;
+    font-weight: bold;
+}
+
+.botonCotizar {
+    width: 98%;
+    margin-top: 20px;
+    padding: 10px;
+    background: #0B2545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 7px;
+}
+
+
+.controlCantidad { display: flex; align-items: center; gap: 10px; margin-top: 8px; margin-bottom: 8px; } .botonCantidad { width: 30px; height: 30px; border: none; border-radius: 6px; cursor: pointer; font-size: 20px; font-weight: bold; } .botonCantidad:hover { opacity: 0.8; } .cantidadProducto { min-width: 25px; text-align: center; font-weight: bold; } .botonVaciar { margin-top: 10px; padding: 5px 28px; border: none; border-radius: 6px; cursor: pointer; } .botonVaciar:hover { opacity: 0.8; }
+	</style>
+
+
+
+
+</head>
+<body>
+
+<style>
+#navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 4px solid #55a39d;
+  font-family: sans-serif;
+  background-color: #ffffff; 
+}
+
+#izquierda img {
+  height: 40px; 
+}
+
+
+#centro a, #derecha a {
+  text-decoration: none;
+  color: gray;
+  padding: 8px 20px;
+  font-size: 18px;
+  border-radius: 10px; 
+  transition: all 0.2s ease;
+}
+
+#centro a:hover, #derecha a:hover {
+  background-color: #e1f3ff;
+  color: #007bc7;
+}
+
+
+
+#derecha {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+#derecha button {
+  background: #1b89ca;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#derecha button:hover {
+  background-color: #146da2; 
+  }
+
+@media (max-width: 992px) {
+  #centro a, #derecha a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navegacion {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  #centro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  #centro a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #derecha {
+    width: 100%;
+    justify-content: center;
+    padding-top: 5px;
+    border-top: 1px solid #f1f5f9;
+  }
+}
+</style>
+   
+
+<nav id="navegacion">
+
+  <div id="izquierda">
+    <img src="img/Q parts.png" alt="Logo Q parts">
+  </div>
+
+  <div id="centro">
+    <a href="index.html">Inicio</a>
+    <a href="catalogodemarcas.html">Catálogo</a>
+    
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <div id="derecha">
+    <a href="carrito.html"> Cotización</a>
+    <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
+  </div>
+
+</nav>
+
+<br>
+
+
+	<div class="container-fluid" style="justify-content: center; display: flex;">
+
+	<div class="carrito">
+    <h2> Cotizar</h2>
+    <div id="listaCarrito">
+        <p>El cotizador está vacío</p>
+    </div>
+    <hr>
+    <div class="totalCarrito">
+        <strong>Total:</strong>
+        <span id="total">$0.00</span>
+    </div>
+    <div style="display: flex; flex-direction: row;">
+    <button id="generarPDF" class="botonCotizar">
+        Cotizar
+    </button>
+    <button id="vaciarCarrito" class="botonVaciar"> Vaciar Cotizador </button>
+    </div>
+</div>
+</div>
+
+<style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+.logeado{
+    display: none;
+}
+
+
+    </style>
+
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogodemarcas.html">Catálogo</a></li>
+        
+        <li><a href="carrito.html">Cotización</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="Inicio de sesion.html" id="iniciosesion">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2000 0000</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@qparts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</footer>
+
+
+
+
+<!-- LIBRERÍAS PARA GENERAR EL PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+
+    import {
+        getAuth,
+        onAuthStateChanged
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+    import {
+        getDatabase,
+        ref,
+        get,
+        onValue,
+        remove,
+        set,
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+  import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
+
+
+   
+
+    const firebaseConfig = {
+
+        apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+
+        authDomain: "sparepartsq-f5f03.firebaseapp.com",
+
+        databaseURL:
+            "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+
+        projectId: "sparepartsq-f5f03",
+
+        storageBucket:
+            "sparepartsq-f5f03.firebasestorage.app",
+
+        messagingSenderId: "148056463900",
+
+        appId:
+            "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+
+        measurementId: "G-XB8Z574X6M"
+    };
+
+
+    const app = initializeApp(firebaseConfig);
+
+    const db = getDatabase(app);
+
+    const auth = getAuth(app);
+
+
+    const listaCarrito =
+        document.getElementById("listaCarrito");
+
+    const totalCarrito =
+        document.getElementById("total");
+
+    const botonPDF =
+        document.getElementById("generarPDF");
+
+    const botonVaciar = document.getElementById("vaciarCarrito");
+
+
+   
+    onAuthStateChanged(auth, (user) => {
+
+        if (!user) {
+
+            console.log("No hay usuario conectado");
+
+            return;
+        }
+
+
+        const uid = user.uid;
+
+
+        const carritoRef =
+            ref(db, `carrito/${uid}`);
+
+
+        onValue(carritoRef, (snapshot) => {
+
+            listaCarrito.innerHTML = "";
+
+            let total = 0;
+
+
+           
+
+            if (!snapshot.exists()) {
+
+                listaCarrito.innerHTML = `
+                    <p>El cotizador está vacío</p>
+                `;
+
+                totalCarrito.textContent = "$0.00";
+
+                return;
+            }
+
+
+            
+
+            snapshot.forEach((childSnapshot) => {
+
+                const producto =
+                    childSnapshot.val();
+
+                const claveCarrito =
+                    childSnapshot.key;
+
+
+                const precio =
+                    parseFloat(producto.precio) || 0;
+
+
+                const cantidad =
+                    parseInt(producto.cantidad) || 1;
+
+
+                const subtotal =
+                    precio * cantidad;
+
+
+                total += subtotal;
+
+
+              
+
+                const itemHTML = `
+
+                    <div class="itemCarrito">
+
+                        <div class="Imagen">
+
+                            <img
+                                src="${producto.imagen}"
+                                height="124px"
+                            >
+
+                        </div>
+
+
+                        <div class="inforepuesto">
+
+                            <div class="repuesto">
+
+                                ${producto.nombre}
+
+                            </div>
+
+
+                            <div style="
+                                font-size: small;
+                                color: gray;
+                            ">
+
+                                Codigo: ${producto.codigo}
+
+                            </div>
+
+
+                            <div class="controlCantidad"> <button class="botonCantidad" data-action="restar" data-carrito-key="${claveCarrito}" > − </button> <span class="cantidadProducto"> ${cantidad} </span> <button class="botonCantidad" data-action="sumar" data-carrito-key="${claveCarrito}" > + </button> </div>
+
+
+                            <div class="precio">
+
+                                $${subtotal.toFixed(2)}
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="botonEliminar"
+                            data-carrito-key="${claveCarrito}"
+                        >
+
+                            ✖️
+
+                        </button>
+
+                    </div>
+
+                `;
+
+
+                listaCarrito.insertAdjacentHTML(
+                    "beforeend",
+                    itemHTML
+                );
+
+            });
+
+
+
+            totalCarrito.textContent =
+                `$${total.toFixed(2)}`;
+
+        });
+
+    });
+
+
+   
+
+listaCarrito.addEventListener(
+    "click",
+    async (evento) => {
+
+        const boton = evento.target.closest(
+            ".botonEliminar, .botonCantidad"
+        );
+
+        if (!boton) return;
+
+
+        const usuario = auth.currentUser;
+
+        if (!usuario) return;
+
+
+        const uid = usuario.uid;
+
+
+        const clave = boton.dataset.carritoKey;
+
+
+        const productoRef = ref(
+            db,
+            `carrito/${uid}/${clave}`
+        );
+
+
+        // ==========================================
+        // ELIMINAR PRODUCTO
+        // ==========================================
+
+        if (boton.classList.contains("botonEliminar")) {
+
+            await remove(productoRef);
+
+            return;
+        }
+
+
+        // ==========================================
+        // CAMBIAR CANTIDAD
+        // ==========================================
+
+        const snapshot = await get(productoRef);
+
+        if (!snapshot.exists()) return;
+
+
+        const producto = snapshot.val();
+
+
+        let cantidad = parseInt(producto.cantidad) || 1;
+
+
+        // SUMAR
+        if (boton.dataset.action === "sumar") {
+
+            cantidad++;
+
+        }
+
+
+        // RESTAR
+        if (boton.dataset.action === "restar") {
+
+            cantidad--;
+
+        }
+
+
+        // ==========================================
+        // SI LLEGA A CERO, ELIMINAMOS EL PRODUCTO
+        // ==========================================
+
+        if (cantidad <= 0) {
+
+            await remove(productoRef);
+
+            return;
+        }
+
+
+        // ==========================================
+        // GUARDAR NUEVA CANTIDAD EN FIREBASE
+        // ==========================================
+
+        producto.cantidad = cantidad;
+
+
+        await set(
+            productoRef,
+            producto
+        );
+
+    }
+);
+
+
+
+
+    
+
+    botonPDF.addEventListener(
+        "click",
+        generarPDF
+    );
+
+
+  
+botonVaciar.addEventListener(
+    "click",
+    async () => {
+
+        const usuario = auth.currentUser;
+
+        if (!usuario) {
+
+            Notiflix.Notify.warning(
+                "Debes iniciar sesión."
+            );
+
+            return;
+        }
+
+        const uid = usuario.uid;
+
+
+        Notiflix.Confirm.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        cancelButtonBackground: '#0B2545',
+        okButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+
+
+
+
+
+
+
+        const confirmar = Notiflix.Confirm.show(
+'Vaciar cotizador',
+'¿Deseas vaciar el cotizador?',
+'Si',
+'No',
+async function okCb() {
+
+    await remove(
+        ref(db, `carrito/${uid}`),
+         
+    );
+    Notiflix.Notify.success("El cotizador ha sido vaciado.");
+
+},
+function cancelCb() {
+Notiflix.Notify.info("El cotizador no ha sido vaciado");
+},
+{boderRadius: '7px'
+},
+);
+
+
+ 
+
+    }
+);
+
+
+
+
+    
+    async function generarPDF() {
+
+        try {
+
+          
+            const usuario =
+                auth.currentUser;
+
+
+            if (!usuario) {
+
+                Notiflix.Notify.warning("Debes iniciar sesion para continuar")
+
+                return;
+            }
+
+
+            const uid =
+                usuario.uid;
+
+
+          
+            const usuarioSnapshot =
+                await get(
+                    ref(
+                        db,
+                        `usuarios/${uid}`
+                    )
+                );
+
+
+            if (!usuarioSnapshot.exists()) {
+
+                Notiflix.Notify.warning(
+                    "No se encontraron los datos del usuario."
+                );
+
+                return;
+            }
+
+
+            const datosUsuario =
+                usuarioSnapshot.val();
+
+
+            const carritoSnapshot =
+                await get(
+                    ref(
+                        db,
+                        `carrito/${uid}`
+                    )
+                );
+
+
+            if (!carritoSnapshot.exists()) {
+
+                Notiflix.Notify.failure(
+                    "El carrito está vacío."
+                );
+
+                return;
+            }
+
+
+           
+
+            const { jsPDF } = window.jspdf;
+
+
+            const doc = new jsPDF({
+
+                orientation: "landscape",
+
+                unit: "mm",
+
+                format: "letter"
+
+            });
+
+
+           
+
+            doc.setFont("helvetica", "bold");
+
+            doc.setFontSize(16);
+
+            doc.text(
+                "Cotización de Grupo Q",
+                140,
+                12,
+                { align:"right" }
+        );
+                
+
+        
+
+            const logo = "img/Q parts.png";
+                
+
+doc.addImage(
+    logo,
+    "PNG",
+    10,   
+    15,    
+    30,    
+    25     
+
+    );
+
+            
+
+            doc.setFont("helvetica", "bold");
+
+            doc.setFontSize(12);
+
+            doc.text(
+                "Cotización Número 274988",
+                270,
+                23,
+                {
+                    align: "right"
+                }
+            );
+
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.setFontSize(9);
+
+            doc.text(
+                "Fecha de creación: "+new Date().toLocaleDateString('en-GB'),
+                270,
+                30,
+                {
+                    align: "right"
+                }
+            );
+
+
+            
+
+            doc.setFontSize(9);
+
+
+        
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Sociedad:",
+                10,
+                48
+            );
+
+
+            doc.rect(
+                45,
+                41,
+                75,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "GRUPO Q EL SALVADOR",
+                47,
+                46.5
+            );
+
+
+       
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Código del cliente:",
+                10,
+                58
+            );
+
+
+            doc.rect(
+                45,
+                51,
+                75,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                String(
+                    datosUsuario.Registro || ""
+                ),
+                47,
+                56.5
+            );
+
+
+    
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Nombre del cliente:",
+                10,
+                68
+            );
+
+
+            doc.rect(
+                45,
+                61,
+                165,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                String(
+                    datosUsuario.nombre || ""
+                ),
+                47,
+                66.5
+            );
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "ID Tributaria:",
+                10,
+                78
+            );
+
+
+            doc.rect(
+                45,
+                71,
+                75,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                String(
+                    datosUsuario.dui || ""
+                ),
+                47,
+                76.5
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Marca:",
+                130,
+                48
+            );
+
+
+            doc.rect(
+                165,
+                41,
+                60,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "NISSAN",
+                167,
+                46.5
+            );
+
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Orden de compra:",
+                130,
+                58
+            );
+
+
+            doc.rect(
+                165,
+                51,
+                60,
+                8
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Condición de pago:",
+                130,
+                78
+            );
+
+
+            doc.rect(
+                165,
+                71,
+                60,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "Contado",
+                167,
+                76.5
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Canal:",
+                230,
+                48
+            );
+
+
+            doc.rect(
+                258,
+                41,
+                15,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "Q4",
+                260,
+                46.5
+            );
+
+
+            // --------------------------------------------------
+            // CENTRO
+            // --------------------------------------------------
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Centro:",
+                230,
+                58
+            );
+
+
+            doc.rect(
+                258,
+                51,
+                15,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "S052",
+                260,
+                56.5
+            );
+
+
+         
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Almacén:",
+                230,
+                68
+            );
+
+
+            doc.rect(
+                258,
+                61,
+                15,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "2200",
+                260,
+                66.5
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "Moneda:",
+                230,
+                78
+            );
+
+
+            doc.rect(
+                258,
+                71,
+                15,
+                8
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                "USD",
+                260,
+                76.5
+            );
+
+
+
+
+            const productos = [];
+
+            let subtotalGeneral = 0;
+
+
+            carritoSnapshot.forEach(
+                (childSnapshot) => {
+
+                    const producto =
+                        childSnapshot.val();
+
+
+                    const precio =
+                        parseFloat(
+                            producto.precio
+                        ) || 0;
+
+
+                    const cantidad =
+                        parseInt(
+                            producto.cantidad
+                        ) || 1;
+
+
+                    const subtotal =
+                        precio * cantidad;
+
+
+                    subtotalGeneral += subtotal;
+
+
+     
+
+                    productos.push([
+
+                        // PRODUCTO
+                        producto.nombre || "",
+
+                        // CANTIDAD
+                        cantidad,
+
+                        // DISPONIBILIDAD
+                        "",
+
+                        // PRECIO UNITARIO
+                        precio.toFixed(2),
+
+                        // ST-DESC
+                        subtotal.toFixed(2),
+
+                        // DESCUENTO
+                        "0.00",
+
+                        // ST-CDESC
+                        subtotal.toFixed(2)
+
+                    ]);
+
+                }
+            );
+
+
+ 
+
+            doc.autoTable({
+
+                startY: 85,
+
+                margin: {
+
+                    left: 10,
+
+                    right: 10
+
+                },
+
+                theme: "grid",
+
+
+                styles: {
+
+                    font: "helvetica",
+
+                    fontSize: 8,
+
+                    cellPadding: 2,
+
+                    textColor: 20,
+
+                    lineColor: 30,
+
+                    lineWidth: 0.2
+
+                },
+
+
+                headStyles: {
+
+                    fontStyle: "bold",
+
+                    halign: "center",
+
+                    valign: "middle"
+
+                },
+
+
+                columnStyles: {
+
+                    0: {
+                        cellWidth: 88
+                    },
+
+                    1: {
+                        cellWidth: 20,
+                        halign: "center"
+                    },
+
+                    2: {
+                        cellWidth: 20,
+                        halign: "center"
+                    },
+
+                    3: {
+                        cellWidth: 33,
+                        halign: "right"
+                    },
+
+                    4: {
+                        cellWidth: 33,
+                        halign: "right"
+                    },
+
+                    5: {
+                        cellWidth: 33,
+                        halign: "right"
+                    },
+
+                    6: {
+                        cellWidth: 33,
+                        halign: "right"
+                    }
+
+                },
+
+
+                head: [[
+
+                    "PRODUCTO",
+
+                    "CANT",
+
+                    "DISP.",
+
+                    "PRECIO UNITARIO",
+
+                    "ST-DESC",
+
+                    "DESCUENTO",
+
+                    "ST-CDESC"
+
+                ]],
+
+
+                body: productos
+
+            });
+
+
+   
+
+            const descuento = 0;
+
+
+            const subtotalConDescuento =
+                subtotalGeneral - descuento;
+
+
+            const impuesto =
+                subtotalConDescuento * 0.13;
+
+
+            const total =
+                subtotalConDescuento +
+                impuesto;
+
+
+
+
+            const finalY =
+                doc.lastAutoTable.finalY;
+
+
+            const xLabel = 235;
+
+            const xValue = 270;
+
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "ST-DESC",
+                xLabel,
+                finalY + 8,
+                {
+                    align: "right"
+                }
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                subtotalGeneral.toFixed(2),
+                xValue,
+                finalY + 8,
+                {
+                    align: "right"
+                }
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "DESCUENTO",
+                xLabel,
+                finalY + 16,
+                {
+                    align: "right"
+                }
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                descuento.toFixed(2),
+                xValue,
+                finalY + 16,
+                {
+                    align: "right"
+                }
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "IMPUESTO VENTA:",
+                xLabel,
+                finalY + 24,
+                {
+                    align: "right"
+                }
+            );
+
+
+            doc.setFont("helvetica", "normal");
+
+            doc.text(
+                impuesto.toFixed(2),
+                xValue,
+                finalY + 24,
+                {
+                    align: "right"
+                }
+            );
+
+
+
+            doc.setFont("helvetica", "bold");
+
+            doc.text(
+                "TOTAL",
+                xLabel,
+                finalY + 32,
+                {
+                    align: "right"
+                }
+            );
+
+
+            doc.text(
+                total.toFixed(2),
+                xValue,
+                finalY + 32,
+                {
+                    align: "right"
+                }
+            );
+
+
+        
+
+            doc.save(
+                `Cotizacion_${datosUsuario.Registro || uid}.pdf`
+            );
+
+            await remove(
+    ref(
+        db,
+        `carrito/${uid}`
+    )
+);
+
+
+        } catch (error) {
+
+            console.error(
+                "Error generando PDF:",
+                error
+            );
+
+
+            Notiflix.Notify.failure( "Ocurrió un error al generar la cotización.");
+          
+
+        }
+
+    }
+
+
+
+
+
+
+</script>
+
+
+
+</script>
+</script>
+
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+     import {
+    getAuth,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+    authDomain: "sparepartsq-f5f03.firebaseapp.com",
+    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+    projectId: "sparepartsq-f5f03",
+    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
+    messagingSenderId: "148056463900",
+    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+    measurementId: "G-XB8Z574X6M"
+  };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const inicio = document.getElementById('iniciosesion');
+    
+
+    onAuthStateChanged(auth,(user) => {
+
+        if (user){
+            inicio.classList.add("logeado");
+        } else
+        inicio.classList.remove("logeado");
+
+    });
+
+
+    </script>
+</body>
+</html>

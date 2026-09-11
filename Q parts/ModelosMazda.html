@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelos Mazda | Q Parts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+         <link rel="icon" type="image/png" href="img/logoicon.png">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+.logeado{
+    display: none;
+}
+
+
+        body {
+            background-color: #f8fafc;
+            font-family: system-ui, -apple-system, sans-serif;
+            color: #1e293b;
+        }
+
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 260px;
+            overflow: hidden;
+            background-color: #0562A9;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.3;
+        }
+
+        .textitobanner {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            color: white;
+            max-width: 600px;
+        }
+
+        .textitobanner p.tag {
+            font-weight: 700;
+            font-size: 14px;
+            color: #93c5fd;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .textitobanner h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .textitobanner p.desc {
+            font-size: 15px;
+            color: #e2e8f0;
+        }
+
+        .modelos-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        .modelos-container h2 {
+            font-size: 28px;
+            color: #0562A9;
+            margin-bottom: 30px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+     
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .imagencontenedor {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .imagencontenedor img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 10px;
+        }
+
+        .contenido {
+            padding: 20px;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        .titulo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0562A9;
+        }
+
+        .botones {
+            padding: 0 20px 20px;
+        }
+
+        .detalles-btn {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            background: #ffffff;
+            border: 1.5px solid #d1d5db;
+            border-radius: 8px;
+            text-align: center;
+            text-decoration: none;
+            color: #D51218;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.2s ease;
+        }
+
+        .detalles-btn:hover {
+            background-color: #D51218;
+            color: #ffffff;
+            border-color: #D51218;
+        }
+    </style>
+</head>
+<body>
+
+<style>
+#navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 4px solid #55a39d;
+  font-family: sans-serif;
+  background-color: #ffffff; 
+}
+
+#izquierda img {
+  height: 40px; 
+}
+
+
+#centro a, #derecha a {
+  text-decoration: none;
+  color: gray;
+  padding: 8px 20px;
+  font-size: 18px;
+  border-radius: 10px; 
+  transition: all 0.2s ease;
+}
+
+#centro a:hover, #derecha a:hover {
+  background-color: #e1f3ff;
+  color: #007bc7;
+}
+
+
+
+#derecha {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+#derecha button {
+  background: #1b89ca;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#derecha button:hover {
+  background-color: #146da2; 
+  }
+
+@media (max-width: 992px) {
+  #centro a, #derecha a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navegacion {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  #centro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  #centro a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #derecha {
+    width: 100%;
+    justify-content: center;
+    padding-top: 5px;
+    border-top: 1px solid #f1f5f9;
+  }
+}
+.logeado{
+    display: none;
+}
+</style>
+   
+
+<nav id="navegacion">
+
+  <div id="izquierda">
+    <img src="img/Q parts.png" alt="Logo Q parts">
+  </div>
+
+  <div id="centro">
+    <a href="index.html">Inicio</a>
+    <a href="catalogodemarcas.html">Catálogo</a>
+ 
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <div id="derecha">
+    <a href="carrito.html"> Cotización</a>
+    <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
+  </div>
+
+</nav>
+
+
+
+    <section class="banner">
+        <img src="img/BANNER.jpg" alt="Banner Catálogo Grupo Q">
+        <div class="textitobanner">
+            <p class="tag">CATÁLOGO</p>
+            <h1>Explora nuestro catálogo</h1>
+            <p class="desc">Consulta las marcas representadas por Grupo Q y encuentra los repuestos que necesitas.</p>
+        </div>
+    </section>
+
+    <main class="modelos-container">
+        <h2>Modelos de Mazda disponibles</h2>
+
+        <div class="grid-cards">
+            <article class="card">
+                <div class="imagencontenedor">
+                    <img src="img/Mazda/MAZDA PICK UP B-50.webp" alt="Mazda B-50 Pick Up">
+                </div>
+                <div class="contenido">
+                    <h3 class="titulo">B-50 Pick Up</h3>
+                </div>
+                <div class="botones">    
+                    <a href="cotizador ASD/cotizadorpickup.html" class="detalles-btn">Ver repuestos</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="imagencontenedor">
+                    <img src="img/Mazda/CX-5 MAZDA.webp" alt="Mazda CX">
+                </div>
+                <div class="contenido">
+                    <h3 class="titulo">Mazda CX-5</h3>
+                </div>
+                <div class="botones">    
+                    <a href="cotizador ASD/cotizadorMazdacx-5.html" class="detalles-btn">Ver repuestos</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <div class="imagencontenedor">
+                    <img src="img/Mazda/MAZDA CX-30.5-s-preferred" alt="Mazda CX-5 Sedan">
+                </div>
+                <div class="contenido">
+                    <h3 class="titulo">Mazda CX-30</h3>
+                </div>
+                <div class="botones">    
+                    <a href="cotizador ASD/cotizadorMazdacx-5.html" class="detalles-btn">Ver repuestos</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+   <style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+    </style>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="catalogodemarcas.html">Catálogo</a></li>
+        <li><a href="#">Q Bot</a></li>
+        <li><a href="carrito.html">Cotización</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="Inicio de sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2000 0000</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@parts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+</footer>
+
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+     import {
+    getAuth,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+    authDomain: "sparepartsq-f5f03.firebaseapp.com",
+    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+    projectId: "sparepartsq-f5f03",
+    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
+    messagingSenderId: "148056463900",
+    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+    measurementId: "G-XB8Z574X6M"
+  };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const inicio = document.getElementById('iniciosesion');
+    
+
+    onAuthStateChanged(auth,(user) => {
+
+        if (user){
+            inicio.classList.add("logeado");
+            inicio.innerHTML = "Cerrar Sesion"
+        } else
+        inicio.classList.remove("logeado");
+
+    });
+
+
+
+
+
+    
+</script>
+
+
+</html>

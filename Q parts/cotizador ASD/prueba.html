@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q Parts - Catálogo Interactivo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --primary-blue: #0b2545;
+      --secondary-blue: #134074;
+      --accent-red: #d90429;
+      --accent-red-hover: #ef233c;
+      --bg-light: #f8f9fa;
+      --text-dark: #1d2d44;
+      --white: #ffffff;
+      --border-color: #e2e8f0;
+    }
+
+    body {
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    header {
+      background: var(--primary-blue);
+      border-bottom: 4px solid var(--accent-red);
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .Logo {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 1.4rem;
+      letter-spacing: 1px;
+    }
+
+    .Logo img {
+      width: 120px;
+      height: auto;
+    }
+
+    .Interactividad {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    section.Principal {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .contenedor {
+      width: 100%;
+      max-width: 1100px;
+      background: var(--white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(11, 37, 69, 0.08);
+      position: relative;
+    }
+
+    .vista {
+      position: relative;
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      user-select: none;
+    }
+
+    .imagenVehiculo {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .lineas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .lineaP {
+      fill: none;
+      stroke: var(--accent-red);
+      stroke-width: 2;
+      stroke-dasharray: 4, 4;
+      animation: dash 30s linear infinite;
+    }
+
+    .punto {
+      fill: var(--accent-red);
+      stroke: var(--white);
+      stroke-width: 2;
+    }
+
+    .etiqueta {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      background: var(--white);
+      border: 1px solid rgba(19, 64, 116, 0.15);
+      border-left: 4px solid var(--accent-red);
+      padding: 0.5rem 0.9rem;
+      border-radius: 4px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .etiqueta:hover, .etiqueta.active {
+      background: var(--primary-blue);
+      color: var(--white);
+      transform: translate(-50%, -53%);
+      box-shadow: 0 6px 20px rgba(11, 37, 69, 0.25);
+    }
+
+    .etiqueta span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .etiqueta::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--accent-red);
+      border-radius: 50%;
+    }
+
+    .tarjetaInfo {
+      margin-top: 2rem;
+      background: #f1f5f9;
+      border-radius: 8px;
+      padding: 1.2rem 1.5rem;
+      border-left: 4px solid var(--secondary-blue);
+    }
+
+    .InfoTitu {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+      margin-bottom: 0.2rem;
+    }
+
+    .DescripInfo {
+      font-size: 0.85rem;
+      color: #555;
+    }
+
+    .CATALOGO {
+      margin-top: 2rem;
+      display: none;
+    }
+
+    .CATALOGO h3 {
+      font-size: 1.1rem;
+      color: var(--primary-blue);
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+    }
+
+    .TarjetasC {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1.2rem;
+      display: flex;
+      gap: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      position: relative;
+    }
+
+    .product-img {
+      width: 80px;
+      height: 90px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 4px;
+    }
+
+    .product-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-sku {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    .product-stock {
+      font-size: 0.75rem;
+      color: #27ae60;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .product-tag-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #334155;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-top: 4px;
+      width: fit-content;
+    }
+
+    .product-right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-red);
+    }
+
+    .product-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .btn-add {
+      background: #1d2d44;
+      color: var(--white);
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .btn-add:hover {
+      background: var(--accent-red);
+    }
+
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -1000;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .contenedor {
+        padding: 1rem;
+      }
+      .TarjetasC {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    footer {
+      background-color: var(--primary-blue);
+      color: #C0D0DA;
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
+
+    #piepagina {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    #cajapie1 { flex: 1 1 250px; }
+    #cajapie2, #cajapie3, #cajapie4 { flex: 1 1 180px; }
+
+    #cajapie2 a {
+      text-decoration: none;
+      color: #C0D0DA;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
+
+    #cajapie2 a:hover { color: var(--white); }
+    #separador { width: 100%; margin: 2rem 0; border-color: #2D6C91; }
+    #derechos { text-align: center; font-size: 0.85rem; margin: 0; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="Logo"><img src="img/Logo png.png" alt="Q Parts Logo"></div> 
+    <div class="Interactividad">Catálogo Interactivo</div> 
+  </header>
+
+  <section class="Principal">
+    <div class="contenedor">
+      <div class="vista" id="ContenedorVista">
+        <!-- Imagen base del vehículo (utilizando la de la Página 2) -->
+        <img src="img/Mazda CX-5 DETAILS.jpg" alt="Plataforma de Vehículo" class="imagenVehiculo" id="ImageVV">
+        
+        <!-- Unificación de líneas SVG (Página 1 + Página 2) -->
+        <svg class="lineas" id="svglineas" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <!-- Faros -->
+          <circle cx="790" cy="425" r="4" class="punto"/>
+          <path d="M 790 425 L 860 480 L 890 480" class="lineaP" />
+
+          <!-- Motor -->
+          <circle cx="830" cy="380" r="4" class="punto"/>
+          <path d="M 830 380 L 900 340 L 920 340" class="lineaP" />
+
+          <!-- Parabrisas -->
+          <circle cx="655" cy="290" r="4" class="punto"/>
+          <path d="M 655 290 L 720 180 L 760 180" class="lineaP"/>
+
+          <!-- Carrocería -->
+          <circle cx="300" cy="340" r="4" class="punto"/>
+          <path d="M 300 340 L 510 100 L 540 100" class="lineaP"/>
+
+          <!-- Cajuela / Maletero -->
+          <circle cx="100" cy="220" r="4" class="punto"/>
+          <path d="M 100 220 L 160 130 L 120 130" class="lineaP"/>
+
+          <!-- Neumáticos -->
+          <circle cx="650" cy="510" r="4" class="punto"/>
+          <path d="M 650 510 L 650 560 L 690 560" class="lineaP" />
+
+          <!-- Frenos -->
+          <circle cx="220" cy="370" r="4" class="punto"/>
+          <path d="M 220 370 L 90 530 L 50 530" class="lineaP"/>
+        </svg>
+
+        <!-- Puntos interactivos con atributos data-catalogo unificados -->
+        <div class="etiqueta" style="top: 80%; left: 89%;" data-title="Faros Delanteros LED" data-desc="Sistema de iluminación adaptativa con tecnología Bi-LED." data-catalogo='[
+          {"name": "Faro delantero derecho", "sku": "12345-987", "stock": "En existencias 20", "price": "$200.00", "img": "img/delantero.jpg", "badge": "NISSAN"},
+          {"name": "Aro Montaje NO 1 Derecho", "sku": "IV12AN234TILL", "stock": "Existencia limitada", "price": "$45.00", "img": "img/montaje.jpg", "badge": "OEM"},
+          {"name": "Tornillo de Ajuste", "sku": "1123456789", "stock": "Existencia limitada", "price": "$5.00", "img": "img/tornillo.avif", "badge": "OEM"},
+          {"name": "Aro Montaje NO 1 Izquierdo", "sku": "IV12AN234TILL", "stock": "En existencia +30", "price": "$20.99", "img": "img/aro.webp", "badge": "OEM"}
+        ]'>
+          <span>Faros</span>
+        </div>
+
+        <div class="etiqueta" style="top: 56.6%; left: 92%;" data-title="Motor y Parrilla" data-desc="Parrilla optimizada para refrigeración de alto flujo y acceso mecánico." data-catalogo='[
+          {"name": "Guia Cabeza Cilindros", "sku": "222222-555", "stock": "En existencias 10+", "price": "$9.99", "img": "img/cabezacilindros.webp", "badge": "OEM"},
+          {"name": "Espiga Bloquea Transmision", "sku": "1234567-890", "stock": "Existencia limitada", "price": "$15.99", "img": "img/espiga.jpg", "badge": "OEM"},
+          {"name": "Espiga Monoblock A Transmision", "sku": "0987654-321", "stock": "Agotado", "price": "$17.99", "img": "img/monoblock.webp", "badge": "OEM"},
+          {"name": "Surtidor Aceite Cadena Distribucion", "sku": "1357902-456", "stock": "En existencia +30", "price": "$20.99", "img": "img/surtidor.webp", "badge": "OEM"}
+        ]'>
+          <span>Motor</span>
+        </div>
+
+        <div class="etiqueta" style="top: 30%; left: 76%;" data-title="Parabrisas" data-desc="Cristal laminado acústico con protección UV e integración de sensores ADAS." data-catalogo='[
+          {"name": "Parabrisas Panorámico ADAS", "sku": "PB-99081", "stock": "En existencias 5", "price": "$280.00", "img": "img/parabrisas.jpg", "badge": "ORIGINAL"},
+          {"name": "Pluma Limpiaparabrisas 24\"", "sku": "PL-24IN", "stock": "En existencia +50", "price": "$12.50", "img": "img/pluma.jpg", "badge": "BOSCH"}
+        ]'>
+          <span>Parabrisas</span>
+        </div>
+
+        <div class="etiqueta" style="top: 16.6%; left: 54%;" data-title="Estructura de Carrocería" data-desc="Paneles de acero de alta resistencia con barras de protección contra impactos laterales." data-catalogo='[
+          {"name": "Capó Delantero Aluminio", "sku": "CP-4401", "stock": "Existencia limitada", "price": "$310.00", "img": "img/capo.jpg", "badge": "OEM"},
+          {"name": "Guabarros Izquierdo", "sku": "GB-1022", "stock": "En existencias 12", "price": "$85.00", "img": "img/guardabarros.jpg", "badge": "OEM"}
+        ]'>
+          <span>Carrocería</span>
+        </div>
+
+        <div class="etiqueta" style="top: 21.6%; left: 12%;" data-title="Caja de Carga / Maletero" data-desc="Superficie de carga con revestimiento protector ultra resistente de fábrica." data-catalogo='[
+          {"name": "Amortiguador Portón Trasero", "sku": "AM-3301", "stock": "En existencia +20", "price": "$35.00", "img": "img/amortiguador.jpg", "badge": "OEM"},
+          {"name": "Cerradura Eléctrica Maletero", "sku": "CR-8812", "stock": "En existencias 8", "price": "$65.00", "img": "img/cerradura.jpg", "badge": "OEM"}
+        ]'>
+          <span>Cajuela/Maletero</span>
+        </div>
+
+        <div class="etiqueta" style="top: 93.3%; left: 69%;" data-title="Rueda y Neumáticos" data-desc="Rin de aleación ligera y neumáticos de alta tracción para todo terreno." data-catalogo='[
+          {"name": "Neumático 225/65 R17", "sku": "NT-17 AllTerrain", "stock": "En existencias +40", "price": "$115.00", "img": "img/neumatico.jpg", "badge": "MICHELIN"},
+          {"name": "Rin Aleación 17 Pulgadas", "sku": "RN-17-01", "stock": "En existencia 10", "price": "$195.00", "img": "img/rin.jpg", "badge": "OEM"}
+        ]'>
+          <span>Neumáticos</span>
+        </div>
+
+        <div class="etiqueta" style="top: 88.3%; left: 5%;" data-title="Sistema de Frenos" data-desc="Discos ventilados y pastillas cerámicas de alto rendimiento con sistema ABS." data-catalogo='[
+          {"name": "Disco Freno Delantero Ventilado", "sku": "T1WLIGHT4-8754", "stock": "En existencias 10+", "price": "$65.00", "img": "img/fdelantero.jpg", "badge": "OEM"},
+          {"name": "Cilindro Maestro Freno", "sku": "D4SH-345", "stock": "Agotado", "price": "$30.00", "img": "img/maestro.jpg", "badge": "OEM"},
+          {"name": "ServoFreno Tuberias", "sku": "FlU77er-90", "stock": "En existencia 5", "price": "$10.99", "img": "img/servo.png", "badge": "OEM"},
+          {"name": "Juego Pastillas Cerámicas", "sku": "PST-CER-01", "stock": "En existencia +30", "price": "$45.00", "img": "img/embrague.jpg", "badge": "BREMBO"}
+        ]'>
+          <span>Frenos</span>
+        </div>
+      </div>
+
+      <!-- Tarjeta informativa central -->
+      <div class="tarjetaInfo">
+        <div class="InfoTitu" id="TittuloInformacion">Selecciona una parte del vehículo</div>
+        <div class="DescripInfo" id="descripccion">Haz clic en los marcadores de la imagen para ver los componentes y sus repuestos disponibles.</div>
+      </div>
+
+      <!-- Sección de despliegue dinámico de catálogo -->
+      <div class="CATALOGO" id="SeccionCatalogo">
+        <h3 id="Ctitulo">Catálogo de la zona</h3>
+        <div class="TarjetasC" id="CatalogoTarjetas"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div id="piepagina">
+        <div id="cajapie1">
+          <img src="img/Logo png.png" alt="Q SpareParts Logo" style="width: 40%; max-width: 120px; margin-bottom: 1rem;">
+          <h5 style="font-weight: bold; font-size: 1.1rem;">Q Parts</h5>
+          <h6 style="font-size: 0.9rem; color: #9ab0c2; margin-bottom: 1rem;">by Grupo Q</h6>
+          <p style="font-size: 0.85rem; line-height: 1.5;">
+            Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+          </p>
+        </div>
+        <div id="cajapie2">
+          <h5 style="font-size: 1rem; font-weight: bold; margin-bottom: 1rem;">NAVEGACIÓN</h5>
+          <div style="display: flex; flex-direction: column;">
+            <a href="#">Inicio</a>
+            <a href="#">Catálogo</a>
+            <a href="#">Q Bot</a>
+            <a href="#">Cotización</a>
+            <a href="#">Contacto</a>
+            <a href="#">Iniciar sesión</a>
+          </div>
+        </div>
+        <div id="cajapie3">
+          <h5 style="font-size: 1rem; font-weight: bold; margin-bottom: 1rem;">CONTACTO</h5>
+          <div style="font-size: 0.85rem; line-height: 1.6;">
+            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-location-dot" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>Talleres y sucursales Grupo Q</p>
+            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-phone" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>+503 2000 0000</p>
+            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-envelope" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>repuestos@qparts.com</p>
+          </div>
+        </div>
+        
+      </div>
+      <hr id="separador">
+      <h5 id="derechos">
+        © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+      </h5>
+    </div>
+  </footer>
+
+  <script>
+    const tags = document.querySelectorAll('.etiqueta');
+    const infoTitle = document.getElementById('TittuloInformacion');
+    const infoDesc = document.getElementById('descripccion');
+    const catalogSection = document.getElementById('SeccionCatalogo');
+    const catalogHeading = document.getElementById('Ctitulo');
+    const catalogGrid = document.getElementById('CatalogoTarjetas');
+
+    tags.forEach(tag => {
+      // Cambio dinámico de texto preliminar en hover
+      tag.addEventListener('mouseenter', () => {
+        if (!tag.classList.contains('active')) {
+          infoTitle.innerText = tag.dataset.title;
+          infoDesc.innerText = tag.dataset.desc;
+        }
+      });
+
+      // Renderizado dinámico del catálogo al hacer clic
+      tag.addEventListener('click', () => {
+        tags.forEach(t => t.classList.remove('active'));
+        tag.classList.add('active');
+
+        infoTitle.innerText = tag.dataset.title;
+        infoDesc.innerText = tag.dataset.desc;
+
+        catalogSection.style.display = 'block';
+        catalogHeading.innerText = `Productos disponibles para: ${tag.dataset.title}`;
+        
+        catalogGrid.innerHTML = '';
+        const items = JSON.parse(tag.dataset.catalogo || '[]');
+
+        if (items.length === 0) {
+          catalogGrid.innerHTML = '<p style="grid-column: 1/-1; color: #777;">No hay productos registrados para esta categoría.</p>';
+          return;
+        }
+
+        items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'product-card';
+          card.innerHTML = `
+            <img src="${item.img}" alt="${item.name}" class="product-img">
+            <div class="product-details">
+              <div>
+                <div class="product-title">${item.name}</div>
+                <div class="product-sku">SKU: ${item.sku}</div>
+                <div class="product-stock">${item.stock}</div>
+                <span class="product-tag-badge">${item.badge}</span>
+              </div>
+            </div>
+            <div class="product-right-col">
+              <div class="product-price">${item.price}</div>
+              <div class="product-actions">
+                <button class="btn-add">Añadir</button>
+              </div>
+            </div>
+          `;
+          catalogGrid.appendChild(card);
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

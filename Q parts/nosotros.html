@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+     <link rel="icon" type="image/png" href="img/logoicon.png">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8fafc;
+            color: #1f2937;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .contenedorGrande {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .QPARTS {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .unpoco {
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 13px;
+            font-weight: 700;
+            color: #00518a;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: inline-block;
+            background-color: #f0f7ff;
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+
+        .unpoco h2 {
+            font-size: 38px;
+            font-weight: 800;
+            color: #00335b;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .contenedor {
+                grid-template-columns: 1fr;
+            }
+            .unpoco h2 {
+                font-size: 28px;
+            }
+        }
+
+        .mision, .visión {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 35px 30px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mision::before, .visión::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00518a, #b91c1c);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .mision:hover, .visión:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 51, 91, 0.1), 0 10px 10px -5px rgba(0, 51, 91, 0.04);
+            transform: translateY(-8px);
+            border-color: #cbd5e1;
+        }
+
+        .mision:hover::before, .visión:hover::before {
+            opacity: 1;
+        }
+
+        .cute {
+            width: 60px;
+            height: 60px;
+            background-color: #f0f7ff;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            padding: 12px;
+            box-shadow: inset 0 2px 4px rgba(0, 81, 138, 0.05);
+        }
+
+        .cute img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .mision h3, .visión h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #00335b;
+            margin: 0 0 15px 0;
+        }
+
+        .mision p, .visión p {
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #cbd5e1, transparent);
+            margin: 40px auto;
+            max-width: 80%;
+        }
+
+        .Tiempo {
+            padding: 80px 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .lineaTiempo {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 1100px;
+        }
+
+        .lineaTiempo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(180deg, #00518a 0%, #b91c1c 100%);
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+
+        .tarjetalinea {
+            position: relative;
+            margin-bottom: 60px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .tarjetalinea.left {
+            justify-content: flex-end;
+        }
+
+        .contenido {
+            width: 43%;
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+        }
+
+        .contenido:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 51, 91, 0.1), 0 10px 10px -5px rgba(0, 51, 91, 0.04);
+            transform: translateY(-5px);
+            border-color: #cbd5e1;
+        }
+
+        .cabezon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .cabezon h3 {
+            font-size: 18px;
+            font-weight: 800;
+            color: #b91c1c;
+            background-color: #fef2f2;
+            padding: 6px 14px;
+            border-radius: 10px;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .contenido p {
+            font-size: 14px;
+            color: #4b5563;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .circulo {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 22px;
+            height: 22px;
+            background-color: #ffffff;
+            border: 5px solid #00518a;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 0 4px #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .tarjetalinea:hover .circulo {
+            border-color: #b91c1c;
+            transform: translate(-50%, -50%) scale(1.2);
+        }
+
+        .equipo {
+            padding: 80px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        /* Estilo de Tarjeta para la sección Equipo */
+        .QQQ {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-radius: 20px;
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;   
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .QQQ::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00518a, #b91c1c);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .QQQ:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 51, 91, 0.1), 0 10px 10px -5px rgba(0, 51, 91, 0.04);
+            transform: translateY(-8px);
+            border-color: #cbd5e1;
+        }
+
+        .QQQ:hover::before {
+            opacity: 1;
+        }
+
+        .persona img {
+            width: 150px;         
+            height: 190px;         
+            object-fit: cover;     
+            border-radius: 12px;  
+        }
+
+        .QQQ h3 {
+            margin-top: 15px;      
+            font-size: 20px;
+            font-weight: 700;
+            color: #00335b;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 768px) {
+            .lineaTiempo::before {
+                left: 24px;
+            }
+
+            .tarjetalinea, .tarjetalinea.left {
+                justify-content: flex-end;
+            }
+
+            .contenido {
+                width: 82%;
+            }
+
+            .circulo {
+                left: 24px;
+                top: 35px;
+                transform: none;
+            }
+
+            .tarjetalinea:hover .circulo {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+            <style>
+#navegacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-top: 4px solid #55a39d;
+  font-family: sans-serif;
+  background-color: #ffffff; 
+}
+
+#izquierda img {
+  height: 40px; 
+}
+
+
+#centro a, #derecha a {
+  text-decoration: none;
+  color: gray;
+  padding: 8px 20px;
+  font-size: 18px;
+  border-radius: 10px; 
+  transition: all 0.2s ease;
+}
+
+#centro a:hover, #derecha a:hover {
+  background-color: #e1f3ff;
+  color: #007bc7;
+}
+
+
+
+#derecha {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+#derecha button {
+  background: #1b89ca;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+#derecha button:hover {
+  background-color: #146da2; 
+  }
+
+@media (max-width: 992px) {
+  #centro a, #derecha a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  #navegacion {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  #centro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  #centro a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  #derecha {
+    width: 100%;
+    justify-content: center;
+    padding-top: 5px;
+    border-top: 1px solid #f1f5f9;
+  }
+}
+
+.logeado{
+    display: none;
+}
+
+.cerrarsesion{
+
+}
+</style>
+<nav id="navegacion">
+
+  <div id="izquierda">
+    <img src="img/Q parts.png" alt="Logo Q parts">
+  </div>
+
+  <div id="centro">
+    <a href="index.html">Inicio</a>
+    <a href="catalogodemarcas.html">Catálogo</a>
+    <a href="nosotros.html">Nosotros</a>
+    <a href="contacto.html">Contacto</a>
+  </div>
+
+  <div id="derecha">
+    <a href="carrito.html"> Cotización</a>
+    <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
+
+  </div>
+
+</nav>
+
+    <section class="QPARTS">
+        <div class="contenedorGrande">
+        <div class="unpoco">
+            <h2>Nosotros</h2>
+        </div>
+
+         <div class="contenedor">
+        <div class="mision">
+         <div class="cute">
+            <img src="img/pasion.png" alt="Misión">
+        </div>
+            <h3>Misión</h3>
+            <p>Servirte con pasión es la fuerza que nos mueve para superar tus expectativas cada día.</p>
+        </div>
+
+        <div class="visión">
+        <div class="cute">
+            <img src="img/Calidad.png" alt="Visión">
+         </div>
+            <h3>Visión</h3>
+             <p>Ser la mejor empresa automotriz del mundo, reconocida por nuestra innovación y calidad.</p>
+        </div>
+
+        <div class="mision">
+        <div class="cute">
+            <img src="img/integridad.png" alt="Valores">
+        </div>
+            <h3>Valores</h3>
+            <p>Pasión por el servicio, excelencia e innovación, integridad, sentido de pertenencia y compromiso con la comunidad.</p>
+        </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="Tiempo">
+        <div class="contenedorGrande">
+        <div class="unpoco">
+            <h2>Grupo Q inició con un sueño</h2>
+        </div>
+
+        <div class="lineaTiempo">
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1952</h3>
+        </div>
+            <p>Inicia operaciones en la ciudad de San Miguel, El Salvador, la empresa SAMUEL QUIROS y CÍA (SAQUIROS).</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1962</h3>
+        </div>
+            <p>Datsun-Nissan confía en Grupo Q para ser distribuidores de la marca en El Salvador.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1964</h3>
+        </div>
+            <p>Se fundan Tecnimotores en la ciudad de Tegucigalpa, Honduras; distribuidora de la marca Nissan Motors Co.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1979</h3>
+        </div>
+            <p>Se inaugura el edificio principal para la distribución de Nissan, lugar donde hoy se encuentran las Oficinas Corporativas.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1992</h3>
+        </div>
+            <p>SAQUIRO y Tecnimotores, hacen la migración a la marca GRUPO Q.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1992</h3>
+        </div>
+            <p>Apertura de centros de servicio Autopits para El Salvador.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+         <div class="tarjetalinea">
+        <div class="contenido">
+         <div class="cabezon">
+            <h3>1996</h3>
+        </div>
+            <p>Aumento del portafolio de marcas para El Salvador y Honduras.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1997</h3>
+        </div>
+            <p>GRUPO Q son elegidos para distribuir.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>1999</h3>
+        </div>
+            <p>Se suma al portafolio de negocios la marca Honda para El Salvador.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2001</h3>
+        </div>
+            <p>Nissan entrega la representación.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2002</h3>
+        </div>
+            <p>Se lanza a nivel regional CREDIQ, el abrazo financiero de GRUPOQ.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2002</h3>
+        </div>
+            <p>Inicio de operaciones en Guatemala, distribuyendo las marcas Jeep y Dodge.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2005</h3>
+        </div>
+             <p>Crece el portafolio de productos para Nicaragua, con la distribución de la marca Chevrolet.</p>
+        </div>
+         <div class="circulo"></div>
+         </div>
+
+         <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2014</h3>
+        </div>
+                <p>Se pone en marcha el primer plan de Lealtad Automotriz de la Región. Así como la App MiGrupoQ, plataforma de servicio en línea.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2022</h3>
+        </div>
+            <p>El portafolio de negocios se expande en Nicaragua, Costa Rica y Honduras con la distribución de motocicletas y camiones Forland.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2022</h3>
+        </div>
+            <p>GrupoQ Guatemala adquiere la distribución de las marcas Hyundai, Mazda y Peugeot.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2023</h3>
+        </div>
+            <p>¡Crecen en la región! GrupoQ inicia operaciones con la marca Chery en Guatemala, El Salvador, Honduras, Nicaragua y Panamá.</p>
+        </div>
+            <div class="circulo"></div>
+        </div>
+
+        <div class="tarjetalinea left">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2023</h3>
+        </div>
+            <p>GrupoQ Panamá amplía su portafolio con la comercialización de las marcas Peugeot y GWM.</p>
+        </div>
+        <div class="circulo"></div>
+            </div>
+
+        <div class="tarjetalinea">
+        <div class="contenido">
+        <div class="cabezon">
+            <h3>2023</h3>
+        </div>
+            <p>GrupoQ arranca el 2023 con la venta y distribución de la prestigiosa marca Cadillac en Costa Rica.</p>
+        </div>
+        <div class="circulo"></div>
+        </div>
+        </div>
+        </div>
+         </section>
+
+    <hr>
+            
+    <section class="equipo">
+        <div class="contenedorGrande">
+            <div class="unpoco">
+                <h2>Equipo de Q Parts</h2>
+            </div>
+            
+            <div class="contenedor">
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/kevin.png" alt="no carga">
+                    </div>
+                    <h3>Kevin Vasquez</h3>
+                </div>
+
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/andrea.png" alt="no carga">
+                    </div>
+                    <h3>Andrea Garcia</h3>
+                </div>
+
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/david.png" alt="no cargaaa">
+                    </div>
+                    <h3>David Castro</h3>
+                </div>
+
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/diego.png" alt="NO">
+                    </div>
+                    <h3>Diego Alfaro</h3>
+                </div>
+
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/tatiana.png" alt="Noo">
+                    </div>
+                    <h3>Tatiana Torres</h3>
+                </div>
+
+                <div class="QQQ">
+                    <div class="persona">
+                        <img src="img/nathaly.png" alt="Kevin Vasquez">
+                    </div>
+                    <h3>Nathaly Rivas</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+    </style>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="catalogodemarcas.html">Catálogo</a></li>
+        <li><a href="#">Q Bot</a></li>
+        <li><a href="carrito.html">Cotización</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="Inicio de sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2000 0000</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@parts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+</footer>
+
+
+    <script type="module">
+
+            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+     import {
+    getAuth,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+    authDomain: "sparepartsq-f5f03.firebaseapp.com",
+    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+    projectId: "sparepartsq-f5f03",
+    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
+    messagingSenderId: "148056463900",
+    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+    measurementId: "G-XB8Z574X6M"
+  };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const inicio = document.getElementById('iniciosesion');
+    
+
+        onAuthStateChanged(auth,(user) => {
+
+        if (user){
+            inicio.classList.add("logeado");
+            inicio.innerHTML = "Cerrar Sesion"
+        } else
+        inicio.classList.remove("logeado");
+
+    });
+
+    </script>
+
+</body>
+</html>
