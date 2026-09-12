@@ -679,51 +679,167 @@
        <div id="contenedor" class="container" ></div>
       </div>
   </section>
+     <style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
-  <footer>
-    <div class="container">
-      <div id="piepagina">
-        <div id="cajapie1">
-          <img src="img/Logo png.png" alt="Error al cargar la imagen" style="width: 40%; max-width: 120px; margin-bottom: 1rem;">
-          <h5 style="font-weight: bold; font-size: 1.1rem;">Q Parts</h5>
-          <h6 style="font-size: 0.9rem; color: #9ab0c2; margin-bottom: 1rem;">by Grupo Q</h6>
-          <p style="font-size: 0.85rem; line-height: 1.5;">
-            Plataforma digital de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
-          </p>
-        </div>
-        <div id="cajapie2">
-          <h5 style="font-size: 1rem; font-weight: bold; margin-bottom: 1rem;">NAVEGACIÓN</h5>
-          <div style="display: flex; flex-direction: column;">
-            <a href="#">Inicio</a>
-            <a href="#">Catálogo</a>
-            <a href="#">Q Bot</a>
-            <a href="#">Cotización</a>
-            <a href="#">Contacto</a>
-            <a href="#">Iniciar sesión</a>
-          </div>
-        </div>
-        <div id="cajapie3">
-          <h5 style="font-size: 1rem; font-weight: bold; margin-bottom: 1rem;">CONTACTO</h5>
-          <div style="font-size: 0.85rem; line-height: 1.6;">
-            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-location-dot" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>Talleres y sucursales Grupo Q</p>
-            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-phone" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>+503 2000 0000</p>
-            <p style="margin-bottom: 0.8rem;"><i class="fa-solid fa-envelope" style="color: rgb(117, 232, 106); margin-right: 8px;"></i>repuestos@qparts.com</p>
-          </div>
-        </div>
-        <div id="cajapie4">
-          <h5 style="font-size: 1rem; font-weight: bold; margin-bottom: 1rem;">LEGAL</h5>
-          <div style="font-size: 0.85rem; line-height: 1.6;">
-            <p style="margin-bottom: 0.8rem;"><a href="#" style="color: #C0D0DA; text-decoration: none;">Política de privacidad</a></p>
-            <p style="margin-bottom: 0.8rem;"><a href="#" style="color: #C0D0DA; text-decoration: none;">Términos y condiciones</a></p>
-          </div>
-        </div>
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+    </style>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="Q parts/img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
       </div>
-      <hr id="separador">
-      <h5 id="derechos">
-        © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
-      </h5>
     </div>
-  </footer>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="Q parts/catalogodemarcas.html">Catálogo</a></li>
+        <li><a href="Q parts/carrito.html">Cotización</a></li>
+        <li><a href="Q parts/contacto.html">Contacto</a></li>
+        <li><a href="Q parts/Inicio de sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2000 0000</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@parts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+</footer>
 
 
       <script type="module">
