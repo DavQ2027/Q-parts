@@ -251,30 +251,62 @@
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .img2{
-    position: relative; right:0px; top: 2px
+/* ========== CELULARES y tablets pequeñas (hasta 751px) ========== */
+@media only screen and (max-width: 751px) {
+
+  .telefono.tamano {
+    height: auto !important;
+    min-height: 140px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;          /* estilo apilado */
+    align-items: flex-start;
+    gap: 8px;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
   }
-  .elementos2{
-    position: relative; left: 130px; bottom: 120px
+
+  .img2 {
+    width: 110px !important;
+    height: 110px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+    position: static !important;
+    margin-bottom: 4px;
   }
-   .botones2{
-    position: relative;left: 370px; bottom: 149px
-   }
-   .texto2{
-    position: relative;left: 373px; bottom: 182px
-   }
 
-   .container2{
-    display: block !important;
-    justify-content: center;
+  .elementos2 {
+    flex: 1;
+    width: 100% !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
 
+  .texto2 {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    font-size: 1.3rem !important;
+    margin: 6px 0 4px 0;
+    text-align: left;
+  }
 
-   }
-
-
-
+  .botones2 {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 6px;
+    padding: 10px 16px !important;
+    align-self: stretch;
+  }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -294,7 +326,7 @@
 
    }
 
-   .container2{
+   .container{
     display: block !important;
    }
 
@@ -324,7 +356,7 @@
     width: 420px !important;
 
   }
-  .container2{display: grid !important;
+  .container{display: grid !important;
   grid-template-columns: repeat(2, 1fr);}
 }
 
@@ -338,17 +370,17 @@
     position: relative; left: 130px; bottom: 120px
   }
   .botones2{
-    position: relative;left: 370px; bottom: 139px
+    position: relative;left: 370px; bottom: 159px
   }
   .texto2{
-    position: relative;left: 370px; bottom: 165px
+    position: relative;left: 380px; bottom: 180px
   }
 
   .tamano{
     width: 500px !important;
   }
 
-  .container2{display: grid !important;
+  .container{display: grid !important;
   grid-template-columns: repeat(2, 1fr);}
 }
   </style>
