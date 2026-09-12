@@ -733,11 +733,13 @@
   </footer>
 
 
-        <script type="module">
+      <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, onValue, query, orderByChild, equalTo, get, push, set} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
@@ -756,9 +758,23 @@ const firebaseConfig = {
 
 
 
-const tags = document.querySelectorAll('.hotspot-tag');
-const infoTitle = document.getElementById('infoTitle');
-const infoDesc = document.getElementById('infoDesc');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const tags = document.querySelectorAll('.etiqueta');
+const infoTitle = document.getElementById('TittuloInformacion');
+const infoDesc = document.getElementById('descripccion');
 const catalogSection = document.getElementById('SeccionCatalogo');
 const catalogHeading = document.getElementById('Ctitulo');
 const catalogGrid = document.getElementById('contenedor');
@@ -803,7 +819,7 @@ function mostrarCatalogo(tag) {
       const clave = childSnapshot.key;
 
      
-      if (repuesto.tag == tag.dataset.title && repuesto.Model == "Frontier"){
+      if (repuesto.tag == tag.dataset.title && repuesto.Model == "Sedan"){
 
       const card = document.createElement('div');
       card.className = 'product-card';
@@ -835,29 +851,7 @@ function mostrarCatalogo(tag) {
   });
 }
 
-    let toastbox = document.getElementById('toastbox');
-
-window.notificacion = function(msg) {
-  const toastbox = document.getElementById('toastbox');
-
-  if (!toastbox) {
-    console.error('No se encontró #toastbox');
-    alert(msg);
-    return;
-  }
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = msg;
-  toastbox.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.4s';
-    setTimeout(() => toast.remove(), 400);
-  }, 3500);
-};
-
+  
    
 
   async function agregarAlCarrito(clave) {
@@ -867,7 +861,7 @@ window.notificacion = function(msg) {
 
   
     if (!usuario) {
-        alert("Debes iniciar sesión para añadir productos al carrito");
+        Notiflix.Notify.warning("Debes iniciar sesión para añadir productos al carrito");
         return;
     }
 
@@ -880,7 +874,7 @@ window.notificacion = function(msg) {
     const snap = await get(ref(db, `Repuestos/${clave}`));
 
     if (!snap.exists()) {
-      alert("Este repuesto ya no está disponible");
+      Notiflix.Notify.warning("Este repuesto ya no está disponible");
       return;
     }
 
@@ -901,26 +895,29 @@ window.notificacion = function(msg) {
     const nuevoItemRef = push(ref(db,`carrito/${uid}`));
     set(nuevoItemRef, item)
       .then(() => {
-        const mensaje = `"${item.nombre}" (${clave}) enviado a cotizar`;
-      notificacion(mensaje);
+          Notiflix.Notify.success(`"${item.nombre}" (${clave}) enviado a cotizar`);
+      
       })
       .catch((error) => {console.error("Error al añadir:", error);
-      notificacion("Error al añadir el producto al carrito");});
+      });
   }
 
-
-  
+  const inicio = document.getElementById('iniciosesion');
 
           onAuthStateChanged(auth,(user) => {
 
         if (user){
             inicio.classList.add("logeado");
-            inicio.innerHTML = "Cerrar Sesion"
+            
         } else
         inicio.classList.remove("logeado");
 
     });
-</script>
+
+
+
+  </script>
+  </script>
 
 
 
