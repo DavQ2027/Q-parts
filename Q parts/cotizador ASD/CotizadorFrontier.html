@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>coti</title>
+  <title>Frontier</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-   <link rel="icon" type="image/png" href="img/logoicon.png">
+   <link rel="icon" type="image/png" href="../img/logoicon.png">
   <style>
+    
+</style>
+   
+
+
+   <style>
     :root {
       --primary-blue: #0b2545;
       --secondary-blue: #134074;
@@ -15,13 +21,7 @@
       --bg-light: #f8f9fa;
       --text-dark: #1d2d44;
       --white: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', sans-serif;
+      --border-color: #e2e8f0;
     }
 
     body {
@@ -30,6 +30,10 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
     }
 
     header {
@@ -42,18 +46,18 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    .brand-logo {
+    .Logo {
       color: var(--white);
       font-weight: 800;
       font-size: 1.4rem;
       letter-spacing: 1px;
     }
 
-    .brand-logo span {
-      color: var(--accent-red);
+    .Logo img {
+      width: 15%;
     }
 
-    .header-tag {
+    .Interactividad {
       background: rgba(255, 255, 255, 0.1);
       color: var(--white);
       padding: 0.4rem 0.8rem;
@@ -62,7 +66,7 @@
       font-weight: 600;
     }
 
-    main {
+    section.Principal {
       flex: 1;
       display: flex;
       flex-direction: column;
@@ -71,7 +75,7 @@
       padding: 2rem;
     }
 
-    .container {
+    .contenedor {
       width: 100%;
       max-width: 1100px;
       background: var(--white);
@@ -81,7 +85,7 @@
       position: relative;
     }
 
-    .viewer-wrapper {
+    .vista {
       position: relative;
       width: 100%;
       max-width: 900px;
@@ -89,13 +93,13 @@
       user-select: none;
     }
 
-    .vehicle-img {
+    .imagenVehiculo {
       width: 100%;
       height: auto;
       display: block;
     }
 
-    .lines-layer {
+    .lineas {
       position: absolute;
       top: 0;
       left: 0;
@@ -104,7 +108,7 @@
       pointer-events: none;
     }
 
-    .line-path {
+    .lineaP {
       fill: none;
       stroke: var(--accent-red);
       stroke-width: 2;
@@ -112,13 +116,13 @@
       animation: dash 30s linear infinite;
     }
 
-    .point-origin {
+    .punto {
       fill: var(--accent-red);
       stroke: var(--white);
       stroke-width: 2;
     }
 
-    .hotspot-tag {
+    .etiqueta {
       position: absolute;
       transform: translate(-50%, -50%);
       background: var(--white);
@@ -135,21 +139,21 @@
       z-index: 10;
     }
 
-    .hotspot-tag:hover {
+    .etiqueta:hover, .etiqueta.active {
       background: var(--primary-blue);
       color: var(--white);
       transform: translate(-50%, -53%);
       box-shadow: 0 6px 20px rgba(11, 37, 69, 0.25);
     }
 
-    .hotspot-tag span {
+    .etiqueta span {
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .hotspot-tag::after {
+    .etiqueta:after {
       content: '';
       width: 6px;
       height: 6px;
@@ -157,28 +161,27 @@
       border-radius: 50%;
     }
 
-    .info-card {
+    .tarjetaInfo {
       margin-top: 2rem;
       background: #f1f5f9;
       border-radius: 8px;
-      padding: 1rem 1.5rem;
+      padding: 1.2rem 1.5rem;
       border-left: 4px solid var(--secondary-blue);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
     }
 
-    .info-title {
-      font-size: 0.9rem;
+    .InfoTitu {
+      font-size: 1rem;
       font-weight: 700;
       color: var(--primary-blue);
+      margin-bottom: 0.2rem;
     }
 
-    .info-desc {
+    .DescripInfo {
       font-size: 0.85rem;
       color: #555;
     }
-      .CATALOGO {
+
+    .CATALOGO {
       margin-top: 2rem;
       display: none;
     }
@@ -197,6 +200,102 @@
       gap: 1.5rem;
     }
 
+    .product-card {
+      background: var(--white);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      padding: 1.2rem;
+      display: flex;
+      gap: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      position: relative;
+    }
+
+    .product-img {
+      width: 80px;
+      height: 90px;
+      object-fit: contain;
+      background: #fff;
+      border: 1px solid #eee;
+      padding: 4px;
+    }
+
+    .product-details {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+    }
+
+    .product-sku {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    .product-stock {
+      font-size: 0.75rem;
+      color: #27ae60;
+      font-weight: 600;
+      margin-top: 0.2rem;
+    }
+
+    .product-tag-badge {
+      display: inline-block;
+      background: #e2e8f0;
+      color: #334155;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 3px;
+      margin-top: 4px;
+      width: fit-content;
+    }
+
+    .product-right-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    .product-price {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-red);
+    }
+
+    .product-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.5rem;
+    }
+
+    .btn-add {
+      background: #1d2d44;
+      color: var(--white);
+      border: none;
+      padding: 6px 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 3px;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+    }
+
+    .btn-add:hover {
+      background: var(--accent-red);
+    }
+
     @keyframes dash {
       to {
         stroke-dashoffset: -1000;
@@ -204,157 +303,63 @@
     }
 
     @media (max-width: 768px) {
-      .container {
+      .contenedor {
         padding: 1rem;
       }
-      .hotspot-tag span {
-        font-size: 0.65rem;
-      }
-      .hotspot-tag {
-        padding: 0.3rem 0.6rem;
+      .TarjetasC {
+        grid-template-columns: 1fr;
       }
     }
-    @media only screen and (max-width: 600px) {
-  .telefono{
-    height: 400px !important;
-  
 
-  }
+    footer {
+      background-color: var(--primary-blue);
+      color: #C0D0DA;
+      padding-top: 3rem;
+      padding-bottom: 1rem;
+    }
 
-  .elementos2{
-    justify-content: center;
-    width: 320px !important;
-    position: relative; 
-    top: 70px;
-    left: 20px;
-  }
+    #piepagina {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
 
-  .texto2{
-    position: relative;
-    bottom: 50px;
-    left: 230px;
-  }
-  .botones2{
-    position: relative;
-    top: 70px;
-    left: 20px;
-    width: 300px;
-    align-self: center;
-  }
+    #cajapie1 {
+      flex: 1 1 250px;
+    }
 
-  .container2{
-    display: block;
-  }
+    #cajapie2, #cajapie3, #cajapie4 {
+      flex: 1 1 180px;
+    }
 
-    .tamano{
-    position: relative; left: -0px;
-  }
-}
+    #cajapie2 a {
+      text-decoration: none;
+      color: #C0D0DA;
+      font-size: 0.95rem;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+      transition: color 0.2s;
+    }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .img2{
-    position: relative; right:0px; top: 2px
-  }
-  .elementos2{
-    position: relative; left: 130px; bottom: 120px
-  }
-   .botones2{
-    position: relative;left: 370px; bottom: 149px
-   }
-   .texto2{
-    position: relative;left: 373px; bottom: 182px
-   }
+    #cajapie2 a:hover {
+      color: var(--white);
+    }
 
-   .container2{
-    display: block !important;
-    justify-content: center;
+    #separador {
+      width: 100%;
+      margin: 2rem 0;
+      border-color: #2D6C91;
+    }
 
-
-   }
-
-
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .img2{
-  position: relative; right:0px; top: 2px
-   }
-
-   .elementos2{
-    position: relative; left: 140px; bottom: 120px
-   }
-   .botones2{
-    position: relative;left: 460px; bottom: 159px
-   }
-   .texto2{
-    position: relative;left: 460px; bottom: 179px
-
-   }
-
-   .container2{
-    display: block !important;
-   }
-
-   .tamano{
-    width: 600px;
-   }
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .img2{
-    position: relative; right:0px; top: 2px
-  }
-  .elementos2{
-    position: relative; left: 130px; bottom: 120px
-  }
-  .botones2{
-    position: relative;left: 300px; bottom: 159px
-
-  }
-  .texto2{
-    position: relative;left: 310px; bottom: 180px
-  }
-  
-  .tamano{
-    width: 420px !important;
-
-  }
-  .container2{display: grid !important;
-  grid-template-columns: repeat(2, 1fr);}
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  
-  .img2{
-    position: relative; top: 2px
-  }
-  .elementos2{
-    position: relative; left: 130px; bottom: 120px
-  }
-  .botones2{
-    position: relative;left: 370px; bottom: 139px
-  }
-  .texto2{
-    position: relative;left: 370px; bottom: 165px
-  }
-
-  .tamano{
-    width: 500px !important;
-  }
-
-  .container2{display: grid !important;
-  grid-template-columns: repeat(2, 1fr);}
-}
+    #derechos {
+      text-align: center;
+      font-size: 0.85rem;
+      margin: 0;
+    }
   </style>
 </head>
 <body>
-
   <style>
 #navegacion {
   display: flex;
@@ -442,9 +447,144 @@
   }
 }
 
-.logeado{
-    display: none;
+ /* ========== CELULARES y tablets pequeñas (hasta 751px) ========== */
+@media only screen and (max-width: 751px) {
+
+  .telefono.tamano {
+    height: auto !important;
+    min-height: 140px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;          /* estilo apilado */
+    align-items: flex-start;
+    gap: 8px;
+    width: 100% !important;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .img2 {
+    width: 110px !important;
+    height: 110px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+    position: static !important;
+    margin-bottom: 4px;
+  }
+
+  .elementos2 {
+    flex: 1;
+    width: 100% !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .texto2 {
+    position: static !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: auto !important;
+    font-size: 1.3rem !important;
+    margin: 6px 0 4px 0;
+    text-align: left;
+  }
+
+  .botones2 {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    max-width: 100%;
+    margin-top: 6px;
+    padding: 10px 16px !important;
+    align-self: stretch;
+  }
 }
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .img2{
+  position: relative; right:0px; top: 2px
+   }
+
+   .elementos2{
+    position: relative; left: 140px; bottom: 120px
+   }
+   .botones2{
+    position: relative;left: 460px; bottom: 159px
+   }
+   .texto2{
+    position: relative;left: 460px; bottom: 179px
+
+   }
+
+   .container{
+    display: block !important;
+   }
+
+   .tamano{
+    width: 600px;
+   }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .img2{
+    position: relative; right:0px; top: 2px
+  }
+  .elementos2{
+    position: relative; left: 130px; bottom: 120px
+  }
+  .botones2{
+    position: relative;left: 300px; bottom: 159px
+
+  }
+  .texto2{
+    position: relative;left: 310px; bottom: 180px
+  }
+  
+  .tamano{
+    width: 420px !important;
+
+  }
+  .container{display: grid !important;
+  grid-template-columns: repeat(2, 1fr);
+  position: relative; left: -40px;
+}
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+  .img2{
+    position: relative; top: 2px
+  }
+  .elementos2{
+    position: relative; left: 130px; bottom: 120px
+  }
+  .botones2{
+    position: relative;left: 370px; bottom: 159px
+  }
+  .texto2{
+    position: relative;left: 380px; bottom: 180px
+  }
+
+  .tamano{
+    width: 500px !important;
+  }
+
+  .container{display: grid !important;
+  grid-template-columns: repeat(2, 1fr);}
+}
+   
+   .logeado{
+    display: none;
+   }
 </style>
    
 
@@ -457,7 +597,7 @@
   <div id="centro">
     <a href="../index.html">Inicio</a>
     <a href="../catalogodemarcas.html">Catálogo</a>
-  
+    
     <a href="../nosotros.html">Nosotros</a>
     <a href="../contacto.html">Contacto</a>
   </div>
@@ -469,89 +609,246 @@
 
 </nav>
 
-  <main>
-    <div class="container">
-      <div class="viewer-wrapper" id="viewerContainer">
-        
-        <img src="img/frontier.png" alt="Plataforma de Vehículo" class="vehicle-img" id="truckImage">
+  <section class="Principal">
+    <div class="contenedor">
+      <div class="vista" id="ContenedorVista">
 
-        <svg class="lines-layer" id="svgLayer" viewBox="0 0 1000 600" preserveAspectRatio="none">
-          <circle cx="800" cy="300" r="4" class="point-origin" />
-          <path d="M 800 300 L 860 480 L 890 480" class="line-path" />
+         <img src="img/frontier.png" alt="Plataforma de Vehículo" class="imagenVehiculo" id="ImageVV">
 
-          <circle cx="870" cy="220" r="4" class="point-origin" />
-          <path d="M 870 220 L 900 340 L 920 340" class="line-path" />
+        <svg class="lineas" id="svglineas" viewBox="0 0 1000 600" preserveAspectRatio="none">
+          <circle cx="800" cy="300" r="4" class="punto" />
+          <path d="M 800 300 L 860 480 L 890 480" class="lineaP" />
 
-          <circle cx="670" cy="100" r="4" class="point-origin" />
-          <path d="M 670 100 L 720 180 L 760 180" class="line-path" />
+          <circle cx="870" cy="220" r="4" class="punto" />
+          <path d="M 870 220 L 900 340 L 920 340" class="lineaP" />
 
-          <circle cx="510" cy="30" r="4" class="point-origin" />
-          <path d="M 510 30 L 510 100 L 540 100" class="line-path" />
+          <circle cx="670" cy="100" r="4" class="punto" />
+          <path d="M 670 100 L 720 180 L 760 180" class="lineaP" />
 
-          <circle cx="230" cy="190" r="4" class="point-origin" />
-          <path d="M 230 190 L 160 130 L 120 130" class="line-path" />
+          <circle cx="510" cy="30" r="4" class="punto" />
+          <path d="M 510 30 L 510 100 L 540 100" class="lineaP" />
 
-          <circle cx="680" cy="485" r="4" class="point-origin" />
-          <path d="M 680 485 L 650 560 L 690 560" class="line-path" />
+          <circle cx="230" cy="190" r="4" class="punto" />
+          <path d="M 230 190 L 160 130 L 120 130" class="lineaP" />
 
-          <circle cx="90" cy="390" r="4" class="point-origin" />
-          <path d="M 90 390 L 80 530 L 50 530" class="line-path" />
+          <circle cx="680" cy="485" r="4" class="punto" />
+          <path d="M 680 485 L 650 560 L 690 560" class="lineaP" />
+
+          <circle cx="90" cy="390" r="4" class="punto" />
+          <path d="M 90 390 L 80 530 L 50 530" class="lineaP" />
         </svg>
 
-        <div class="hotspot-tag" style="top: 80%; left: 89%;" data-title="Faros Delanteros LED" data-desc="Sistema de iluminación adaptativa con tecnología Bi-LED.">
+        <div class="etiqueta" style="top: 80%; left: 89%;" data-title="Faros Delanteros LED" data-desc="Sistema de iluminación adaptativa con tecnología Bi-LED.">
           <span>Faros</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 56.6%; left: 92%;" data-title="Motor y Parrilla" data-desc="Parrilla optimizada para refrigeración de alto flujo y acceso mecánico.">
+        <div class="etiqueta" style="top: 56.6%; left: 92%;" data-title="Motor y Parrilla" data-desc="Parrilla optimizada para refrigeración de alto flujo y acceso mecánico.">
           <span>Motor</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 30%; left: 76%;" data-title="Parabrisas" data-desc="Cristal laminado acústico con protección UV e integración de sensores ADAS.">
+        <div class="etiqueta" style="top: 30%; left: 76%;" data-title="Parabrisas" data-desc="Cristal laminado acústico con protección UV e integración de sensores ADAS.">
           <span>Parabrisas</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 16.6%; left: 54%;" data-title="Quemacocos Eléctrico" data-desc="Techo solar panorámico con control de deslizamiento one-touch.">
+        <div class="etiqueta" style="top: 16.6%; left: 54%;" data-title="Quemacocos Eléctrico" data-desc="Techo solar panorámico con control de deslizamiento one-touch.">
           <span>Quemacocos</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 21.6%; left: 12%;" data-title="Caja de Carga" data-desc="Superficie de carga con revestimiento protector ultra resistente de fábrica.">
+        <div class="etiqueta" style="top: 21.6%; left: 12%;" data-title="Caja de Carga" data-desc="Superficie de carga con revestimiento protector ultra resistente de fábrica.">
           <span>Caja / Batea</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 93.3%; left: 69%;" data-title="Rueda y Frenos Delanteros" data-desc="Rin de aleación con discos ventilados y sistema antibloqueo ABS.">
+        <div class="etiqueta" style="top: 93.3%; left: 69%;" data-title="Rueda y Frenos Delanteros" data-desc="Rin de aleación con discos ventilados y sistema antibloqueo ABS.">
           <span>Neumáticos</span>
         </div>
 
-        <div class="hotspot-tag" style="top: 88.3%; left: 5%;" data-title="Sistema de Escape" data-desc="Línea de escape optimizada de acero inoxidable bajo el chasis lateral.">
+        <div class="etiqueta" style="top: 88.3%; left: 5%;" data-title="Sistema de Escape" data-desc="Línea de escape optimizada de acero inoxidable bajo el chasis lateral.">
           <span>Escape</span>
         </div>
 
       </div>
+        
 
-      <div class="info-card">
-        <div>
-          <div class="info-title" id="infoTitle">Selecciona una parte</div>
-          <div class="info-desc" id="infoDesc">Pasa el cursor o presiona los botones sobre la imagen para inspeccionar los componentes.</div>
-
-
-        </div>
-
+      <div class="tarjetaInfo">
+        <div class="InfoTitu" id="TittuloInformacion">Selecciona una parte del vehículo</div>
+        <div class="DescripInfo" id="descripccion">Haz click en los marcadores de la imagen para ver los componentes y sus repuestos disponibles.</div>
       </div>
+
        <div class="CATALOGO" id="SeccionCatalogo">
         <h3 id="Ctitulo">Catálogo de la zona</h3>
-       <div id="contenedor" class="container2" ></div>
+       <div id="contenedor" class="container" ></div>
       </div>
+  </section>
+     <style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
 
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+    </style>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="../img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
+      </div>
     </div>
-    
-  </main>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="Q parts/catalogodemarcas.html">Catálogo</a></li>
+        <li><a href="Q parts/carrito.html">Cotización</a></li>
+        <li><a href="Q parts/contacto.html">Contacto</a></li>
+        <li><a href="Q parts/Inicio de sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2000 0000</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@parts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+</footer>
 
 
-        <script type="module">
+      <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getDatabase, ref, onValue, query, orderByChild, equalTo, get, push, set} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
 
 const firebaseConfig = {
     apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
@@ -570,9 +867,23 @@ const firebaseConfig = {
 
 
 
-const tags = document.querySelectorAll('.hotspot-tag');
-const infoTitle = document.getElementById('infoTitle');
-const infoDesc = document.getElementById('infoDesc');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const tags = document.querySelectorAll('.etiqueta');
+const infoTitle = document.getElementById('TittuloInformacion');
+const infoDesc = document.getElementById('descripccion');
 const catalogSection = document.getElementById('SeccionCatalogo');
 const catalogHeading = document.getElementById('Ctitulo');
 const catalogGrid = document.getElementById('contenedor');
@@ -617,7 +928,7 @@ function mostrarCatalogo(tag) {
       const clave = childSnapshot.key;
 
      
-      if (repuesto.tag == tag.dataset.title && repuesto.Model == "Frontier"){
+      if (repuesto.tag == tag.dataset.title && repuesto.Model == "Sedan"){
 
       const card = document.createElement('div');
       card.className = 'product-card';
@@ -649,29 +960,7 @@ function mostrarCatalogo(tag) {
   });
 }
 
-    let toastbox = document.getElementById('toastbox');
-
-window.notificacion = function(msg) {
-  const toastbox = document.getElementById('toastbox');
-
-  if (!toastbox) {
-    console.error('No se encontró #toastbox');
-    alert(msg);
-    return;
-  }
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = msg;
-  toastbox.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.4s';
-    setTimeout(() => toast.remove(), 400);
-  }, 3500);
-};
-
+  
    
 
   async function agregarAlCarrito(clave) {
@@ -681,7 +970,7 @@ window.notificacion = function(msg) {
 
   
     if (!usuario) {
-        alert("Debes iniciar sesión para añadir productos al carrito");
+        Notiflix.Notify.warning("Debes iniciar sesión para añadir productos al carrito");
         return;
     }
 
@@ -694,7 +983,7 @@ window.notificacion = function(msg) {
     const snap = await get(ref(db, `Repuestos/${clave}`));
 
     if (!snap.exists()) {
-      alert("Este repuesto ya no está disponible");
+      Notiflix.Notify.warning("Este repuesto ya no está disponible");
       return;
     }
 
@@ -715,26 +1004,29 @@ window.notificacion = function(msg) {
     const nuevoItemRef = push(ref(db,`carrito/${uid}`));
     set(nuevoItemRef, item)
       .then(() => {
-        const mensaje = `"${item.nombre}" (${clave}) enviado a cotizar`;
-      notificacion(mensaje);
+          Notiflix.Notify.success(`"${item.nombre}" (${clave}) enviado a cotizar`);
+      
       })
       .catch((error) => {console.error("Error al añadir:", error);
-      notificacion("Error al añadir el producto al carrito");});
+      });
   }
 
-
-  
+  const inicio = document.getElementById('iniciosesion');
 
           onAuthStateChanged(auth,(user) => {
 
         if (user){
             inicio.classList.add("logeado");
-            inicio.innerHTML = "Cerrar Sesion"
+            
         } else
         inicio.classList.remove("logeado");
 
     });
-</script>
+
+
+
+  </script>
+  </script>
 
 
 
