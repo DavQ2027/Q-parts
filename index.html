@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="icon" type="image/png" href="Q parts/img/logoicon.png">
     <style>
+        /* ===== FIX DEFINITIVO DE OVERFLOW ===== */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+}
+
+* {
+    max-width: 100%;
+}
+
+img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contenedores principales */
+.hero-container,
+.filter-container,
+.features-section,
+.catalog-container,
+.quote-info-card,
+.corporate-container,
+.footer-container,
+.smart-search-card,
+.products-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Arregla el width fijo que tienes en el HTML */
+.stat-item p[style*="width"] {
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+/* Evita que los grids se desborden */
+.features-grid,
+.brands-grid,
+.products-grid,
+.corp-checks,
+.filter-form {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+}
+
+/* Chat flotante - evita que genere overflow */
+#draggable-chat-btn {
+    right: 16px !important;
+    bottom: 16px !important;
+}
+
+.chat-modal-window {
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+}
         :root {
             --gq-blue-dark: #072244;
             --gq-blue-navy: #0e3b6f;
