@@ -2133,37 +2133,37 @@ img, video, iframe, svg {
     measurementId: "G-XB8Z574X6M"
   };
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
-    const inicio = document.getElementById('iniciosesion');
-    const cotizar = document.getElementById('btn-search')
-    
+const inicio = document.getElementById('iniciosesion');
+const cotizar = document.getElementById('btn-search');
 
-    onAuthStateChanged(auth,(user) => {
 
-        if (user){
-            inicio.classList.add("logeado");
-        } else
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        inicio.classList.add("logeado");
+    } else {
         inicio.classList.remove("logeado");
-
-
-          });
-
-          const user = auth.currentUser;
-
-       cotizar.addEventListener('click', () => {
-         
-
-  if (user) {
-
-    window.location.href = "Q parts/carrito.html"
-   
-  } else {
-            Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
-  }
+    }
 
 });
+
+cotizar.addEventListener('click', () => {
+
+    const user = auth.currentUser;
+
+    if (user) {
+        window.location.href = "Q parts/carrito.html";
+    } else {
+        
+    Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
+    }
+
+});
+
+
+
     
 
 

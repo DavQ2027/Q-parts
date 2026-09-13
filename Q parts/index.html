@@ -2135,32 +2135,29 @@ img, video, iframe, svg {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const inicio = document.getElementById('iniciosesion');
-    const cotizar = document.getElementById('btn-search')
-    
+const inicio = document.getElementById('iniciosesion');
+const cotizar = document.getElementById('btn-search');
 
-    onAuthStateChanged(auth,(user) => {
 
-        if (user){
-            inicio.classList.add("logeado");
-        } else
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        inicio.classList.add("logeado");
+    } else {
         inicio.classList.remove("logeado");
+    }
 
-    });
+});
+
+cotizar.addEventListener('click', () => {
 
     const user = auth.currentUser;
 
-
-     cotizar.addEventListener('click', () => {
-         
-
-  if (user) {
-
-    window.location.href = "Q parts/carrito.html"
-   
-  } else {
-            Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
-  }
+    if (user) {
+        window.location.href = "Q parts/carrito.html";
+    } else {
+        
+    Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
+    }
 
 });
     
