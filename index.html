@@ -1711,7 +1711,7 @@ img, video, iframe, svg {
                 <div class="section-tag">COTIZACIÓN</div>
                 <h2 class="section-title">Arma tu lista y solicita una cotización</h2>
                 <p class="section-desc">Agrega los repuestos que necesitas, ajusta cantidades, adjunta los datos de tu vehículo y envía la solicitud. Q SpareParts simplifica el proceso de consulta y cotización con Grupo Q.</p>
-               <a href="Q parts/carrito.html"> <button class="btn-search"><i class="fa-regular fa-file-lines"></i> Ver mi cotización</button> </a>
+           <button class="btn-search" id="btn-search"><i class="fa-regular fa-file-lines"></i> Ver mi cotización</button> 
             </div>
             <div class="steps-box">
                 <h4>CÓMO FUNCIONA</h4>
@@ -2119,6 +2119,8 @@ img, video, iframe, svg {
     getAuth,
     onAuthStateChanged
   } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
 
    const firebaseConfig = {
     apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
@@ -2135,6 +2137,7 @@ img, video, iframe, svg {
     const auth = getAuth(app);
 
     const inicio = document.getElementById('iniciosesion');
+    const cotizar = document.getElementById('')
     
 
     onAuthStateChanged(auth,(user) => {
@@ -2144,7 +2147,21 @@ img, video, iframe, svg {
         } else
         inicio.classList.remove("logeado");
 
+
+        if (user) {
+
+            Notiflix.Notify.warning("Primero debes explorar nuestro catalogo");
+
+        
+        } else {
+            window.location.href = "Q parts/carrito.html"
+        }
+
+
+
     });
+
+
 
 
 
