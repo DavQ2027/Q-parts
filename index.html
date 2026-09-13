@@ -2137,7 +2137,7 @@ img, video, iframe, svg {
     const auth = getAuth(app);
 
     const inicio = document.getElementById('iniciosesion');
-    const cotizar = document.getElementById('')
+    const cotizar = document.getElementById('btn-search')
     
 
     onAuthStateChanged(auth,(user) => {
@@ -2148,7 +2148,7 @@ img, video, iframe, svg {
         inicio.classList.remove("logeado");
 
 
-       miBoton.addEventListener('click', () => {
+       cotizar.addEventListener('click', () => {
          
 
   if (user) {

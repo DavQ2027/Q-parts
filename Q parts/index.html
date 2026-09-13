@@ -1711,6 +1711,7 @@ img, video, iframe, svg {
                 <div class="section-tag">COTIZACIÓN</div>
                 <h2 class="section-title">Arma tu lista y solicita una cotización</h2>
                 <p class="section-desc">Agrega los repuestos que necesitas, ajusta cantidades, adjunta los datos de tu vehículo y envía la solicitud. Q SpareParts simplifica el proceso de consulta y cotización con Grupo Q.</p>
+                <button class="btn-search" id="btn-search"><i class="fa-regular fa-file-lines"></i> Ver mi cotización</button> 
                
             </div>
             <div class="steps-box">
@@ -2135,6 +2136,7 @@ img, video, iframe, svg {
     const auth = getAuth(app);
 
     const inicio = document.getElementById('iniciosesion');
+    const cotizar = document.getElementById('btn-search')
     
 
     onAuthStateChanged(auth,(user) => {
@@ -2146,19 +2148,23 @@ img, video, iframe, svg {
 
     });
 
-            if (user) {
 
-            Notiflix.Notify.warning("Primero debes explorar nuestro catalogo");
+     cotizar.addEventListener('click', () => {
+         
 
-        
-        } else {
-            window.location.href = "carrito.html"
-        }
+  if (user) {
+
+    window.location.href = "Q parts/carrito.html"
+   
+  } else {
+            Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
+  }
+
+});
+    
 
 
-
-
-
+ 
 
     
 </script>
