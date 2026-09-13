@@ -2148,15 +2148,19 @@ img, video, iframe, svg {
         inicio.classList.remove("logeado");
 
 
-        if (user) {
+       miBoton.addEventListener('click', () => {
+         
 
-            Notiflix.Notify.warning("Primero debes explorar nuestro catalogo");
+  if (user) {
 
-        
-        } else {
-            window.location.href = "Q parts/carrito.html"
-        }
+    window.location.href = "Q parts/carrito.html"
+   
+  } else {
+            Notiflix.Notify.warning("Debes explorar nuestro catalogo primero");
+  }
 
+});
+    
 
 
     });
