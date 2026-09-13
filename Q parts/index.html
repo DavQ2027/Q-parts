@@ -8,6 +8,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
      <link rel="icon" type="image/png" href="Q parts/img/logoicon.png">
     <style>
+        /* ===== FIX DEFINITIVO DE OVERFLOW ===== */
+html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+}
+
+* {
+    max-width: 100%;
+}
+
+img, video, iframe, svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Contenedores principales */
+.hero-container,
+.filter-container,
+.features-section,
+.catalog-container,
+.quote-info-card,
+.corporate-container,
+.footer-container,
+.smart-search-card,
+.products-section {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+/* Arregla el width fijo que tienes en el HTML */
+.stat-item p[style*="width"] {
+    width: auto !important;
+    max-width: 100% !important;
+}
+
+/* Evita que los grids se desborden */
+
+
+.products-grid,
+.corp-checks,
+.filter-form {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr)) !important;
+}
+
+/* Chat flotante - evita que genere overflow */
+#draggable-chat-btn {
+    right: 16px !important;
+    bottom: 16px !important;
+}
+
+.chat-modal-window {
+    right: 12px !important;
+    left: 12px !important;
+    width: auto !important;
+    max-width: calc(100vw - 24px) !important;
+}
         :root {
             --gq-blue-dark: #072244;
             --gq-blue-navy: #0e3b6f;
@@ -1273,7 +1333,162 @@
                 right: 5%;
                 bottom: 90px;
             }
-        }
+             .corporate-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .corporate-container {
+    gap: 2rem;
+  }
+
+  .corp-visual {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .corp-logos-combo {
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .corp-badge-large,
+  .corp-badge-outline {
+    width: 100%;
+    text-align: center;
+    font-size: 1.05rem;
+    padding: 1rem 1.25rem;
+  }
+
+  .corp-pills {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.45rem;
+  }
+
+  .section-desc {
+    font-size: 0.9rem;
+  }
+
+  .check-item {
+    font-size: 0.8rem;
+  }
+}
+            
+        
+        
+        /* ===== MOBILE L / M / S - Navbar ===== */
+@media (max-width: 768px) {
+  #navegacion {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+    border-top: 4px solid #55a39d;
+  }
+
+  #izquierda {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  #izquierda img {
+    height: 36px;
+  }
+
+  #centro {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+  }
+
+  #centro a {
+    font-size: 14px;
+    padding: 6px 12px;
+    color: #64748b;
+  }
+
+  #derecha {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #e2e8f0;
+  }
+
+  #derecha a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  #derecha button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .hero-content{
+    width: 280px;
+  }
+
+  #draggable-chat-btn{
+    position: fixed;
+    right: 70px;
+  }
+
+.chat-modal-window{
+    width: 80%;
+    margin-inline: 2%;
+    position: fixed;
+    right: 70px;
+}
+
+.modal-card{
+    width: 80%;
+    margin-inline: auto;
+    position: fixed;
+    right: 40px;
+
+}
+
+
+}
+
+/* Mobile M */
+@media (max-width: 480px) {
+  #centro a,
+  #derecha a {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
+
+  #derecha {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  #derecha button {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Mobile S */
+@media (max-width: 360px) {
+  #izquierda img {
+    height: 32px;
+  }
+
+  #centro a {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
     </style>
 </head>
 <body>
@@ -1395,7 +1610,7 @@
 
     <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content" style="">
                 <div class="hero-badge">
                     <i class="fa-solid fa-shield-halved"></i> WEB SITE DIGITAL DE GRUPO Q
                 </div>
@@ -1482,118 +1697,7 @@
     </section>
 
 
-<!--
-    <section class="products-section">
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=400&q=80" alt="Pastillas de freno">
-                    <span class="prod-tag-category">FRENOS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Pastillas de freno delanteras</h3>
-                    <div class="compat-brand">Marca compatible: Nissan</div>
-                    <div class="compat-models">Modelos: Versa, Sentra, Kicks</div>
-                    <div class="product-price">$68.50</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80" alt="Filtro de aceite">
-                    <span class="prod-tag-category">FILTROS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Filtro de aceite original</h3>
-                    <div class="compat-brand">Marca compatible: Hyundai</div>
-                    <div class="compat-models">Modelos: Accent, Tucson, Elantra</div>
-                    <div class="product-price">$12.90</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="Filtro de aire">
-                    <span class="prod-tag-category">FILTROS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Filtro de aire de motor</h3>
-                    <div class="compat-brand">Marca compatible: Mazda</div>
-                    <div class="compat-models">Modelos: Mazda3, CX-5, CX-30</div>
-                    <div class="product-price">$21.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1558441719-8b489c63f749?auto=format&fit=crop&w=400&q=80" alt="Batería">
-                    <span class="prod-tag-category">ELÉCTRICO</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Batería libre de mantenimiento 12V</h3>
-                    <div class="compat-brand">Marca compatible: Ford</div>
-                    <div class="compat-models">Modelos: Ranger, Escape, F-150</div>
-                    <div class="product-price">$142.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=400&q=80" alt="Amortiguadores">
-                    <span class="prod-tag-category">SUSPENSIÓN</span>
-                    <span class="prod-tag-stock stock-order">Bajo pedido</span>
-                </div>
-                <div class="product-info">
-                    <h3>Amortiguadores traseros (par)</h3>
-                    <div class="compat-brand">Marca compatible: Isuzu</div>
-                    <div class="compat-models">Modelos: D-Max, MU-X</div>
-                    <div class="product-price">$210.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=400&q=80" alt="Bujías de iridio">
-                    <span class="prod-tag-category">MOTOR</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Bujías de iridio (juego)</h3>
-                    <div class="compat-brand">Marca compatible: Honda</div>
-                    <div class="compat-models">Modelos: Civic, CR-V, HR-V</div>
-                    <div class="product-price">$54.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
 
