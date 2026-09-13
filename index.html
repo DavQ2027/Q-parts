@@ -1274,6 +1274,238 @@
                 bottom: 90px;
             }
         }
+        /* ========== MOBILE L (hasta 768px) - mejora lo existente ========== */
+@media (max-width: 768px) {
+    .navbar,
+    #navegacion {
+        padding: 0.75rem 1rem;
+    }
+
+    .hero-section {
+        padding: 2.5rem 1.25rem 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.1rem;          /* baja de 3rem */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .btn-search,
+    .btn-catalog-hero {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+    }
+
+    .stat-item p {
+        font-size: 1.25rem;
+    }
+
+    .features-section,
+    .catalog-section,
+    .quote-info-section,
+    .corporate-section,
+    .products-section {
+        padding: 3rem 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.7rem;
+    }
+
+    .filter-card {
+        padding: 1.25rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+
+    .brand-btn {
+        padding: 1.1rem 0.75rem;
+    }
+
+    .quote-info-card,
+    .smart-search-card {
+        padding: 1.75rem;
+        gap: 1.75rem;
+    }
+
+    .corp-checks {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        gap: 2rem;
+    }
+
+    #draggable-chat-btn {
+        width: 56px;
+        height: 56px;
+        bottom: 20px;
+        right: con 20px;
+    }
+
+    .chat-modal-window {
+        width: 92%;
+        right: 4%;
+        bottom: 85px;
+        height: 70vh;
+        max-height: 520px;
+    }
+}
+
+/* ========== MOBILE M (hasta 480px) ========== */
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-badge {
+        font-size: 0.7rem;
+        padding: 0.3rem 0.65rem;
+    }
+
+    .hero-stats {
+        gap: 1rem;
+        justify-content: space-between;
+    }
+
+    .stat-item h4 {
+        font-size: 0.7rem;
+    }
+
+    .stat-item p {
+        font-size: 1.15rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .section-desc {
+        font-size: 0.9rem;
+    }
+
+    .features-grid,
+    .products-grid {
+        gap: 1.25rem;
+    }
+
+    .feature-card,
+    .product-card {
+        padding: 1.25rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
+    }
+
+    .brand-btn h4 {
+        font-size: 0.95rem;
+    }
+
+    .brand-btn span {
+        font-size: 0.7rem;
+    }
+
+    .filter-form {
+        gap: 0.75rem;
+    }
+
+    .form-group select {
+        padding: 0.65rem;
+        font-size: 0.85rem;
+    }
+
+    .steps-box {
+        padding: 1.25rem;
+    }
+
+    .corp-logos-combo {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .corp-badge-large,
+    .corp-badge-outline {
+        font-size: 1rem;
+        padding: 1rem 1.25rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.75rem;
+        text-align: center;
+    }
+}
+
+/* ========== MOBILE S (hasta 360px) ========== */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 1.55rem;
+    }
+
+    .hero-ctas {
+        gap: 0.6rem;
+    }
+
+    .btn-search,
+    .btn-catalog-hero {
+        padding: 0.7rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 1.35rem;
+    }
+
+    .brands-grid {
+        grid-template-columns: 1fr;   /* una sola columna en pantallas muy chicas */
+    }
+
+    .feature-card,
+    .product-info {
+        padding: 1rem;
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
+
+    .btn-view-details,
+    .btn-add-quote {
+        width: 100%;
+    }
+
+    #navegacion #centro a {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
     </style>
 </head>
 <body>
@@ -1482,118 +1714,7 @@
     </section>
 
 
-<!--
-    <section class="products-section">
-        <div class="products-grid">
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=400&q=80" alt="Pastillas de freno">
-                    <span class="prod-tag-category">FRENOS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Pastillas de freno delanteras</h3>
-                    <div class="compat-brand">Marca compatible: Nissan</div>
-                    <div class="compat-models">Modelos: Versa, Sentra, Kicks</div>
-                    <div class="product-price">$68.50</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=400&q=80" alt="Filtro de aceite">
-                    <span class="prod-tag-category">FILTROS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Filtro de aceite original</h3>
-                    <div class="compat-brand">Marca compatible: Hyundai</div>
-                    <div class="compat-models">Modelos: Accent, Tucson, Elantra</div>
-                    <div class="product-price">$12.90</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=400&q=80" alt="Filtro de aire">
-                    <span class="prod-tag-category">FILTROS</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Filtro de aire de motor</h3>
-                    <div class="compat-brand">Marca compatible: Mazda</div>
-                    <div class="compat-models">Modelos: Mazda3, CX-5, CX-30</div>
-                    <div class="product-price">$21.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1558441719-8b489c63f749?auto=format&fit=crop&w=400&q=80" alt="Batería">
-                    <span class="prod-tag-category">ELÉCTRICO</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Batería libre de mantenimiento 12V</h3>
-                    <div class="compat-brand">Marca compatible: Ford</div>
-                    <div class="compat-models">Modelos: Ranger, Escape, F-150</div>
-                    <div class="product-price">$142.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=400&q=80" alt="Amortiguadores">
-                    <span class="prod-tag-category">SUSPENSIÓN</span>
-                    <span class="prod-tag-stock stock-order">Bajo pedido</span>
-                </div>
-                <div class="product-info">
-                    <h3>Amortiguadores traseros (par)</h3>
-                    <div class="compat-brand">Marca compatible: Isuzu</div>
-                    <div class="compat-models">Modelos: D-Max, MU-X</div>
-                    <div class="product-price">$210.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-img-wrapper">
-                    <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=400&q=80" alt="Bujías de iridio">
-                    <span class="prod-tag-category">MOTOR</span>
-                    <span class="prod-tag-stock stock-available">En existencia</span>
-                </div>
-                <div class="product-info">
-                    <h3>Bujías de iridio (juego)</h3>
-                    <div class="compat-brand">Marca compatible: Honda</div>
-                    <div class="compat-models">Modelos: Civic, CR-V, HR-V</div>
-                    <div class="product-price">$54.00</div>
-                    <div class="product-actions">
-                        <button class="btn-view-details"><i class="fa-regular fa-eye"></i> Ver detalles</button>
-                        <button class="btn-add-quote"><i class="fa-solid fa-plus"></i> Cotizar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
 
 
