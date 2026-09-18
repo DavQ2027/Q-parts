@@ -6,6 +6,9 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<title>Registrar</title>
   <link rel="icon" type="image/png" href="img/logoicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="icon" type="image/png" href="img/logoicon.png">
 
 	<style>
 
@@ -22,6 +25,7 @@
   display: flex;
   justify-content: center;
   margin-top: 32px;
+  margin-bottom: 32px;
 
 }
 
@@ -155,15 +159,15 @@ form .botoniniciarsesion{
             <input  type="number" oninput="if(this.value.length > 9) this.value = this.value.slice(0, 9);"
   placeholder="12345678-9" id="dui" required 
 >   
-            <label>Direccion</label>
+            <label>Dirección</label>
             <input type="text" placeholder="Direccion" id="Direccion" required>
             <label>Giro</label>
             <input type="text" placeholder="Giro" id="Giro" required> 
             <label>Registro Fiscal</label>
             <input type="number" oninput="if(this.value.length > 14) this.value = this.value.slice(0, 14);" placeholder="Registro Fiscal" id="Registro" required>
-            <label>Numero</label>
+            <label>Número</label>
             <input type="text" placeholder="Numero de Telefono" id="numeroT" required>
-            <label>Email</label>
+            <label>E-mail</label>
             <input type="text" placeholder="Hola@gmail.com" id="Email" required>
             <label>Contraseña</label>
             <input type="password" placeholder="Contraseña" id="Contraseña" required>
@@ -183,6 +187,168 @@ form .botoniniciarsesion{
     </div>
     
   </div>
+
+       <style>
+        footer {
+  background-color: #034574;
+  color: #e2e8f0;
+  padding: 50px 20px 25px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+#piepagina {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 40px;
+}
+
+#piepagina h5 {
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+#piepagina p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cbd5e1;
+}
+
+.redes-sociales {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.redes-sociales a {
+  width: 38px;
+  height: 38px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.redes-sociales a:hover {
+  background-color: #D51218;
+}
+
+#piepagina ul {
+  list-style: none;
+}
+
+#piepagina ul li {
+  margin-bottom: 12px;
+}
+
+#piepagina ul a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+#piepagina ul a:hover {
+  color: #ffffff;
+}
+
+.contacto-lista li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: #cbd5e1;
+  margin-bottom: 16px;
+}
+
+.contacto-lista i {
+  color: #22c55e;
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+#separador {
+  max-width: 1200px;
+  margin: 40px auto 25px;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#derechos {
+  text-align: left;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+@media (max-width: 768px) {
+  #piepagina {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+    </style>
+
+<footer>
+  <div id="piepagina">
+    <div id="seccion1">
+      <img src="img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
+      <p>
+        Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
+      </p>
+      <div class="redes-sociales">
+        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div id="seccion2">
+      <h5>NAVEGACIÓN</h5>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="catalogodemarcas.html">Catálogo</a></li>
+        <li><a href="carrito.html">Cotización</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="Inicio de sesion.html">Iniciar sesión</a></li>
+      </ul>
+    </div>
+
+    <div id="seccion3">
+      <h5>CONTACTO</h5>
+      <ul class="contacto-lista">
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <span>+503 2248-6400</span>
+        </li>
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <span>repuestos@parts.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <hr id="separador">
+
+  <p id="derechos">
+    © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
+  </p>
+</footer>
 
 
 
@@ -233,12 +399,12 @@ form .botoniniciarsesion{
     const password = document.getElementById("Contraseña").value;
 
     if (!nombre || !dui || !telefono || !correo || !password || !Registro || !giro) {
-      Notiflix.Notify.warning("Por favor completa todos los campos");
+      Notiflix.Notify.failure("Por favor completa todos los campos");
       return;
     }
 
     if (password.length < 6) {
-      Notiflix.notify.warning('La contraseña debe contener al menos 6 caracteres');
+      Notiflix.Notify.failure('La contraseña debe contener al menos 6 caracteres');
       return;
     }
 
@@ -319,7 +485,7 @@ form .botoniniciarsesion{
       "auth/weak-password": "La contraseña es muy débil"
     };
 
-     Notiflix.Notify.failure(mensajes[error.code] || "Ocurrió un error: " + error.message);
+     Notiflix.notify.failure(mensajes[error.code] || "Ocurrió un error: " + error.message);
   }
 </script>
 
