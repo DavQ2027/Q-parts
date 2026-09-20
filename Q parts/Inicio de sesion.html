@@ -361,6 +361,11 @@ form .botoniniciarsesion{
 
 }
 
+.help-link:hover{
+  color: #5786A3;
+}
+
+
 .deslogear{
 
     display: none;
@@ -887,6 +892,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
           correo: user.email,
           dui: "",
           telefono: user.phoneNumber || "",
+          direccioon: "";
           metodoRegistro: "google",
           createdAt: new Date().toISOString()
         });
