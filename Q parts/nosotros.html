@@ -343,121 +343,439 @@
 </head>
 <body>
 
-            <style>
-#navegacion {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  border-top: 4px solid #55a39d;
-  font-family: sans-serif;
-  background-color: #ffffff; 
+                 <style>
+
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1000;
+        }
+
+        #navegacion {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 100%;
+            margin: 0 auto;
+            border-top: 4px solid #55a39d;
+            font-family: sans-serif;
+            position: relative; 
+            background-color: white;
+            z-index: 10000;
+        }
+
+        #izquierda {
+            display: flex;
+            align-items: center;
+        }
+
+        #izquierda img {
+            height: 40px;
+            max-height: 40px;
+            width: auto;
+            display: block;
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: #333;
+            padding: 5px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-grow: 1;
+            margin-left: 2rem;
+        }
+
+        #centro {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        #derecha {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        #centro a, 
+        #derecha a {
+            text-decoration: none;
+            color: #4b5563;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            }
+
+        #centro a:hover, 
+        #derecha a:hover {
+            background-color: #e1f3ff;
+            color: #007bc7;
+            }
+
+        #derecha button {
+            background: #1b89ca;
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+            }
+
+        #derecha button:hover {
+            background-color: #146da2;
+            }
+
+        @media (max-width: 992px) {
+        #navegacion {
+            padding: 0.8rem 1.5rem;
+            }
+
+        .hamburger-btn {
+            display: block;
+            }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            width: 100%;
+            background-color: #ffffff;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-left: 0;
+            border-top: 1px solid #f1f5f9;
+            z-index: 100000;
+            }
+
+        .nav-menu.active {
+            display: flex !important;
+            }
+
+        #centro, 
+        #derecha {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 0.8rem;
+            }
+
+        #centro a, 
+        #derecha a {
+            width: 80%;
+            text-align: center;
+            }
+        }
+
+@media only screen and (min-width: 992px){
+            .dropdown{
+            list-style: none;
+            position: absolute;
+            padding: 0.5rem 0;
+            margin: 0.5rem -0.5rem;
+            background: white;
+            border-radius: 7px;
+            margin-top: 0px;
+            box-shadow: 0 4px 12px solid black;
+            display: none;
+            z-index: 1000000000;
+
+        }
+
+        .dropdown li{
+            height: 100%;
+            margin-top: 10px;
+        }
+
+        .perfil:hover .dropdown{
+            display: block !important;
+        }
+
+        .perfil a {
+            display: flex;
+        }
+
+        #icono-xd{
+            transform: rotate(0deg);
+            transition: 0.3s ease-in-out all;
+            margin-right: 3px;
+        }
+
+        .perfil:hover #icono-xd{
+            transform: rotate(180deg);
+        }
+
+        .drop-tablet{
+            display: none;
+        }
+
+
+
 }
 
-#izquierda img {
-  height: 40px; 
+@media only screen and (max-width: 991px){
+    .drop-tablet a{
+        display: flex;
+        text-align: center;
+    }
+
+    #perfil{
+        display: none;
+    }
+
 }
 
-
-#centro a, #derecha a {
-  text-decoration: none;
-  color: gray;
-  padding: 8px 20px;
-  font-size: 18px;
-  border-radius: 10px; 
-  transition: all 0.2s ease;
-}
-
-#centro a:hover, #derecha a:hover {
-  background-color: #e1f3ff;
-  color: #007bc7;
-}
-
-
-
-#derecha {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-}
-
-#derecha button {
-  background: #1b89ca;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background-color 0.2s ease;
-}
-
-#derecha button:hover {
-  background-color: #146da2; 
-  }
-
-@media (max-width: 992px) {
-  #centro a, #derecha a {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  #navegacion {
-    flex-direction: column;
-    gap: 15px;
-    padding: 15px;
-  }
-
-  #centro {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
-  }
-
-  #centro a {
-    font-size: 14px;
-    padding: 6px 12px;
-  }
-
-  #derecha {
-    width: 100%;
-    justify-content: center;
-    padding-top: 5px;
-    border-top: 1px solid #f1f5f9;
-  }
+#ini{
+    margin:auto;
 }
 
 .logeado{
+    display: flex !important;
+
+}
+
+.deslogear{
+
     display: none;
-}
-
-.cerrarsesion{
 
 }
-</style>
-<nav id="navegacion">
 
-  <div id="izquierda">
-    <img src="img/Q parts.png" alt="Logo Q parts">
-  </div>
+.notiflix-report *, 
+.notiflix-confirm *, 
+.notiflix-notify * {
+    text-decoration: none !important;
+}
 
-  <div id="centro">
-    <a href="index.html">Inicio</a>
-    <a href="catalogodemarcas.html">Catálogo</a>
-    <a href="nosotros.html">Nosotros</a>
-    <a href="contacto.html">Contacto</a>
-  </div>
 
-  <div id="derecha">
-    <a href="carrito.html"> Cotización</a>
-    <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
+    
+        </style>
+ 
+        <nav id="navegacion">
+            <div id="izquierda">
+                <img src="img/Q parts.png" alt="Logo Q parts">
+            </div>
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+            </button>
 
-  </div>
+            <div class="nav-menu" id="navMenu">
+                <div id="centro">
+                    <a href="index.html">Inicio</a>
+                    <a href="catalogodemarcas.html">Catálogo</a>
+                    <a href="nosotros.html">Nosotros</a>
+                    <a href="contacto.html">Contacto</a>
+                </div>
 
-</nav>
+                <div id="derecha">
+                    <a href="carrito.html"> Cotización</a>
+                    <div class="perfil" id="perfil">
+                        <a href="#" class="perfil"> <img src="img/personas.png" style="position: relative; bottom: -1px; height: 22px;">Perfil <img src="img/drop.png" style="position:relative; bottom: 2px;" id="icono-xd"></a>
+                        <ul class="dropdown">
+                            <li><a href="">Perfil</a></li>
+                            <li><a > <div role="button" id="btnCerrarSesion"> Cerrar Sesion </div> </a></li>
+                        </ul>
+                    </div>
+
+                            <a href="perfil.html" class="drop-tablet" id="perfil2">Perfil</a>
+                            <a class="drop-tablet" id="cerrarsesion2">Cerrar Sesion</a>
+
+                   <a href="Inicio de sesion.html" id="iniciosesion" style="display: none;"><button id="ini"> Iniciar sesión</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+            const icon = hamburgerBtn.querySelector('i');
+
+            hamburgerBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+        });
+    </script>
+    <script type="module">
+
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+     import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+    authDomain: "sparepartsq-f5f03.firebaseapp.com",
+    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+    projectId: "sparepartsq-f5f03",
+    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
+    messagingSenderId: "148056463900",
+    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+    measurementId: "G-XB8Z574X6M"
+  };
+
+    const app = initializeApp(firebaseConfig);
+
+
+ import { getAuth, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const auth = getAuth();
+const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+const perfil = document.getElementById("perfil");
+const perfil2 = document.getElementById("perfil2");
+const cerrarsesion = document.getElementById("cerrarsesion2");
+
+btnCerrarSesion.addEventListener("click", () => {
+        Notiflix.Confirm.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        cancelButtonBackground: '#0B2545',
+        okButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+
+    Notiflix.Confirm.show(
+'Cerrar Sesión',
+'¿Deseas cerrar sesión?',
+'Si',
+'No',
+async function okCb() {
+
+      signOut(auth).then(() => {
+
+
+       Notiflix.Report.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        ButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+    Notiflix.Report.success(
+        'Sesion cerrada correctamente!',
+        '',
+        'Continuar',
+        function cb() {
+
+          window.location.href = "index.html";
+          },
+          );
+  }).catch((error) => {
+    
+    console.error("Error al cerrar sesión: ", error);
+    Notiflix.Notify.failure("Ocurrio un error", error);
+  });
+
+},
+function cancelCb() {
+Notiflix.Notify.info("No se ha cerrado sesión");
+},
+{boderRadius: '7px'
+                    },
+);
+
+});
+
+
+cerrarsesion.addEventListener("click", () => {
+        Notiflix.Confirm.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        cancelButtonBackground: '#0B2545',
+        okButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+
+    Notiflix.Confirm.show(
+'Cerrar Sesión',
+'¿Deseas cerrar sesión?',
+'Si',
+'No',
+async function okCb() {
+
+      signOut(auth).then(() => {
+
+
+       Notiflix.Report.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        ButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+    Notiflix.Report.success(
+        'Sesion cerrada correctamente!',
+        '',
+        'Continuar',
+        function cb() {
+
+          window.location.href = "index.html";
+          },
+          );
+  }).catch((error) => {
+    
+    console.error("Error al cerrar sesión: ", error);
+    Notiflix.Notify.failure("Ocurrio un error", error);
+  });
+
+},
+function cancelCb() {
+Notiflix.Notify.info("No se ha cerrado sesión");
+},
+{boderRadius: '7px'
+                    },
+);
+
+});
+
+
+const inicio = document.getElementById('iniciosesion');
+const cotizar = document.getElementById('btn-search');
+
+
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        inicio.classList.add("logeado");
+        cerrarsesion.remove("logeado");
+        perfil.remove("deslogear");
+        perfil2.remove("deslogear");
+    } else {
+        inicio.classList.remove("logeado");
+        perfil.add("deslogear");
+        perfil2.add("deslogear");
+        cerrarsesion.add("deslogear")
+    }
+
+});
+        
+    </script>
 
     <section class="QPARTS">
         <div class="contenedorGrande">
@@ -912,43 +1230,6 @@
   </p>
 </footer>
 
-
-    <script type="module">
-
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-     import {
-    getAuth,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-   const firebaseConfig = {
-    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
-    authDomain: "sparepartsq-f5f03.firebaseapp.com",
-    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
-    projectId: "sparepartsq-f5f03",
-    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
-    messagingSenderId: "148056463900",
-    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
-    measurementId: "G-XB8Z574X6M"
-  };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    const inicio = document.getElementById('iniciosesion');
-    
-
-        onAuthStateChanged(auth,(user) => {
-
-        if (user){
-            inicio.classList.add("logeado");
-            inicio.innerHTML = "Cerrar Sesion"
-        } else
-        inicio.classList.remove("logeado");
-
-    });
-
-    </script>
 
 </body>
 </html>
