@@ -6,6 +6,8 @@
   <title>Frontier</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="../img/logoicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     
 </style>
@@ -35,6 +37,17 @@
       padding: 0;
       font-family: 'Montserrat', sans-serif;
     }
+
+                body{
+                margin: 0 ;
+                padding: 0;
+            }
+
+            html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+}
 
     header {
       background: var(--primary-blue);
@@ -503,7 +516,6 @@
    }
 </style>
    
-
           <style>
 
         header {
@@ -524,7 +536,8 @@
             font-family: sans-serif;
             position: relative; 
             background: white;
-            width: 100%;
+            width: 95%;
+            z-index: 3999;
         }
 
         #izquierda {
@@ -644,12 +657,91 @@
             text-align: center;
             }
         }
+
+@media only screen and (min-width: 992px){
+            .dropdown{
+            list-style: none;
+            position: absolute;
+            padding: 0.5rem 0;
+            margin: 0.5rem -0.5rem;
+            background: white;
+            border-radius: 7px;
+            margin-top: 0px;
+            box-shadow: 0 4px 12px solid black;
+            display: none;
+
+        }
+
+        .dropdown li{
+            height: 100%;
+            margin-top: 10px;
+        }
+
+        .perfil:hover .dropdown{
+            display: block !important;
+        }
+
+        .perfil a {
+            display: flex;
+        }
+
+        #icono-xd{
+            transform: rotate(0deg);
+            transition: 0.3s ease-in-out all;
+        }
+
+        .perfil:hover #icono-xd{
+            transform: rotate(180deg);
+        }
+
+        .drop-tablet{
+            display: none;
+        }
+
+
+
+}
+
+@media only screen and (max-width: 991px){
+    .drop-tablet a{
+        display: flex;
+        text-align: center;
+    }
+
+    #perfil{
+        display: none;
+    }
+
+}
+
+#ini{
+    margin:auto;
+}
+
+.logeado{
+    display: flex !important;
+
+}
+
+.deslogear{
+
+    display: none;
+
+}
+
+.notiflix-report *, 
+.notiflix-confirm *, 
+.notiflix-notify * {
+    text-decoration: none !important;
+}
+
+
     
         </style>
  
         <nav id="navegacion">
             <div id="izquierda">
-                <img src="img/Q parts.png" alt="Logo Q parts">
+                <img src="../img/Q parts.png" alt="Logo Q parts">
             </div>
             <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
                 <i class="fas fa-bars"></i>
@@ -657,19 +749,30 @@
 
             <div class="nav-menu" id="navMenu">
                 <div id="centro">
-                    <a href="index.html">Inicio</a>
-                    <a href="catalogodemarcas.html">Catálogo</a>
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="../index.html">Inicio</a>
+                    <a href="../catalogodemarcas.html">Catálogo</a>
+                    <a href="../nosotros.html">Nosotros</a>
+                    <a href="../contacto.html">Contacto</a>
                 </div>
 
                 <div id="derecha">
                     <a href="carrito.html"> Cotización</a>
-                   <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
+                    <div class="perfil" id="perfil">
+                        <a href="#" class="perfil"> <img src="../img/personas.png" height="22px">Perfil <img src="../img/drop.png" id="icono-xd"></a>
+                        <ul class="dropdown">
+                            <li><a href="">Perfil</a></li>
+                            <li><a> <div role="button" id="btnCerrarSesion"> Cerrar Sesion </div> </a></li>
+                        </ul>
+                    </div>
+
+                            <a href="../perfil.html" class="drop-tablet" id="perfil2">Perfil</a>
+                            <a class="drop-tablet" id="cerrarsesion2">Cerrar Sesion</a>
+
+                   <a href="../Inicio de sesion.html" id="iniciosesion" style="display: none;"><button id="ini"> Iniciar sesión</button></a>
                 </div>
             </div>
         </nav>
-
+    </header>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const hamburgerBtn = document.getElementById('hamburgerBtn');
@@ -687,6 +790,162 @@
                 }
             });
         });
+    </script>
+    <script type="module">
+
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+     import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
+
+
+   const firebaseConfig = {
+    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
+    authDomain: "sparepartsq-f5f03.firebaseapp.com",
+    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
+    projectId: "sparepartsq-f5f03",
+    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
+    messagingSenderId: "148056463900",
+    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
+    measurementId: "G-XB8Z574X6M"
+  };
+
+    const app = initializeApp(firebaseConfig);
+
+
+ import { getAuth, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+const auth = getAuth();
+const btnCerrarSesion = document.getElementById("btnCerrarSesion");
+const perfil = document.getElementById("perfil");
+const perfil2 = document.getElementById("perfil2");
+const cerrarsesion = document.getElementById("cerrarsesion2");
+
+btnCerrarSesion.addEventListener("click", () => {
+        Notiflix.Confirm.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        cancelButtonBackground: '#0B2545',
+        okButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+
+    Notiflix.Confirm.show(
+'Cerrar Sesión',
+'¿Deseas cerrar sesión?',
+'Si',
+'No',
+async function okCb() {
+
+      signOut(auth).then(() => {
+
+
+       Notiflix.Report.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        ButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+    Notiflix.Report.success(
+        'Sesion cerrada correctamente!',
+        '',
+        'Continuar',
+        function cb() {
+
+          window.location.href = "index.html";
+          },
+          );
+  }).catch((error) => {
+    
+    console.error("Error al cerrar sesión: ", error);
+    Notiflix.Notify.failure("Ocurrio un error", error);
+  });
+
+},
+function cancelCb() {
+Notiflix.Notify.info("No se ha cerrado sesión");
+},
+{boderRadius: '7px'
+                    },
+);
+
+});
+
+
+cerrarsesion.addEventListener("click", () => {
+        Notiflix.Confirm.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        cancelButtonBackground: '#0B2545',
+        okButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+
+    Notiflix.Confirm.show(
+'Cerrar Sesión',
+'¿Deseas cerrar sesión?',
+'Si',
+'No',
+async function okCb() {
+
+      signOut(auth).then(() => {
+
+
+       Notiflix.Report.init({
+        width: '320px',
+        borderRadius: '5px',
+        plainText: true,
+        ButtonBackground: '#D90429',
+        titleColor: '#D90429',
+        });
+    Notiflix.Report.success(
+        'Sesion cerrada correctamente!',
+        '',
+        'Continuar',
+        function cb() {
+
+          window.location.href = "index.html";
+          },
+          );
+  }).catch((error) => {
+    
+    console.error("Error al cerrar sesión: ", error);
+    Notiflix.Notify.failure("Ocurrio un error", error);
+  });
+
+},
+function cancelCb() {
+Notiflix.Notify.info("No se ha cerrado sesión");
+},
+{boderRadius: '7px'
+                    },
+);
+
+});
+
+
+const inicio = document.getElementById('iniciosesion');
+const cotizar = document.getElementById('btn-search');
+
+
+
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        inicio.classList.add("logeado");
+        cerrarsesion.remove("logeado");
+        perfil.remove("deslogear");
+        perfil2.remove("deslogear");
+    } else {
+        inicio.classList.remove("logeado");
+        perfil.add("deslogear");
+        perfil2.add("deslogear");
+        cerrarsesion.add("logeado")
+    }
+
+});
+        
     </script>
 
   <section class="Principal">

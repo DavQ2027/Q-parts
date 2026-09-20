@@ -271,7 +271,7 @@
                 <div id="derecha">
                     <a href="carrito.html"> Cotización</a>
                     <div class="perfil" id="perfil">
-                        <a href="#" class="perfil"> <img src="img/personas.png" height="22px">Perfil <img src="../img/drop.png" id="icono-xd"></a>
+                        <a href="#" class="perfil"> <img src="img/personas.png" height="22px" style="position: relative; bottom: 2px;">Perfil <img src="img/drop.png" id="icono-xd" style="position: relative; bottom: 2px;"></a>
                         <ul class="dropdown">
                             <li><a href="">Perfil</a></li>
                             <li><a> <div role="button" id="btnCerrarSesion"> Cerrar Sesion </div> </a></li>
@@ -762,8 +762,9 @@ onAuthStateChanged(auth, (user) => {
           telefono: telefono,
           correo: correo,
           Registro: Registro,
+          direccion: dire,
           giro: giro,
-          dire: dire,
+          dire: direccion,
         });
 
      
