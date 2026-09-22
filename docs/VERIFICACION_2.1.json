@@ -1,0 +1,1028 @@
+{
+  "version": "2.1.0",
+  "date": "2026-09-22",
+  "node": "24.19.0 (ejecución de pruebas); objetivo de despliegue Node 22.x",
+  "logic": {
+    "total": 78,
+    "passed": 78,
+    "new_chat_tests": 25,
+    "existing_tests": 53
+  },
+  "chat": {
+    "browser": "153.0.8010.0",
+    "mode": "Gemini y Firebase simulados; API y cliente reales",
+    "views": [
+      {
+        "width": 296,
+        "left": 12,
+        "right": 308,
+        "top": 265,
+        "overflow": []
+      },
+      {
+        "width": 366,
+        "left": 12,
+        "right": 378,
+        "top": 265,
+        "overflow": []
+      },
+      {
+        "width": 400,
+        "left": 350,
+        "right": 750,
+        "top": 265,
+        "overflow": []
+      },
+      {
+        "width": 400,
+        "left": 1022,
+        "right": 1422,
+        "top": 265,
+        "overflow": []
+      }
+    ],
+    "flows": [
+      "4 anchos: stock/precio/subtotal correctos, añadir 2 solo al confirmar, revalidación y Escape",
+      "Espera visible y protección contra consultas duplicadas",
+      "Referencias de CX-30 y seguimiento de «el segundo»",
+      "Datos ausentes y texto HTML no se convierten en hechos ni elementos ejecutables",
+      "Cuota agotada y reintento manual sin duplicar mensajes",
+      "Clave pendiente: mensaje útil y enlace al catálogo",
+      "Añadir sin sesión conserva el flujo de acceso existente"
+    ],
+    "errors": []
+  },
+  "layout": {
+    "browser": "153.0.8010.0",
+    "searches": [
+      {
+        "file": "ModelosIsuzu.html",
+        "width": 320,
+        "inputRight": 246,
+        "buttonLeft": 254,
+        "buttonRight": 298,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 303,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosMazda.html",
+        "width": 320,
+        "inputRight": 246,
+        "buttonLeft": 254,
+        "buttonRight": 298,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 303,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosNissan.html",
+        "width": 320,
+        "inputRight": 246,
+        "buttonLeft": 254,
+        "buttonRight": 298,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 303,
+        "outerLeft": 17
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorFrontier.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorPathFinder.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQKR.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQMR.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorUrvan.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorkicks.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorpickup.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorsedan.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/prueba.html",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Nissan&modelo=NP300",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Mazda&modelo=CX-30",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Isuzu&modelo=D-MAX",
+        "width": 320,
+        "inputRight": 218,
+        "buttonLeft": 226,
+        "buttonRight": 270,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 275,
+        "outerLeft": 45
+      },
+      {
+        "file": "ModelosIsuzu.html",
+        "width": 390,
+        "inputRight": 316,
+        "buttonLeft": 324,
+        "buttonRight": 368,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 373,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosMazda.html",
+        "width": 390,
+        "inputRight": 316,
+        "buttonLeft": 324,
+        "buttonRight": 368,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 373,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosNissan.html",
+        "width": 390,
+        "inputRight": 316,
+        "buttonLeft": 324,
+        "buttonRight": 368,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 373,
+        "outerLeft": 17
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorFrontier.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorPathFinder.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQKR.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQMR.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorUrvan.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorkicks.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorpickup.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorsedan.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/prueba.html",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Nissan&modelo=NP300",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Mazda&modelo=CX-30",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Isuzu&modelo=D-MAX",
+        "width": 390,
+        "inputRight": 288,
+        "buttonLeft": 296,
+        "buttonRight": 340,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 345,
+        "outerLeft": 45
+      },
+      {
+        "file": "ModelosIsuzu.html",
+        "width": 600,
+        "inputRight": 526,
+        "buttonLeft": 534,
+        "buttonRight": 578,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 583,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosMazda.html",
+        "width": 600,
+        "inputRight": 526,
+        "buttonLeft": 534,
+        "buttonRight": 578,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 583,
+        "outerLeft": 17
+      },
+      {
+        "file": "ModelosNissan.html",
+        "width": 600,
+        "inputRight": 526,
+        "buttonLeft": 534,
+        "buttonRight": 578,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 583,
+        "outerLeft": 17
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorFrontier.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorPathFinder.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQKR.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQMR.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorUrvan.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorkicks.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorpickup.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorsedan.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "cotizador%20ASD/prueba.html",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Nissan&modelo=NP300",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Mazda&modelo=CX-30",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "repuestos.html?marca=Isuzu&modelo=D-MAX",
+        "width": 600,
+        "inputRight": 498,
+        "buttonLeft": 506,
+        "buttonRight": 550,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 555,
+        "outerLeft": 45
+      },
+      {
+        "file": "ModelosIsuzu.html",
+        "width": 1024,
+        "inputRight": 666,
+        "buttonLeft": 674,
+        "buttonRight": 718,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 723,
+        "outerLeft": 25
+      },
+      {
+        "file": "ModelosMazda.html",
+        "width": 1024,
+        "inputRight": 666,
+        "buttonLeft": 674,
+        "buttonRight": 718,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 723,
+        "outerLeft": 25
+      },
+      {
+        "file": "ModelosNissan.html",
+        "width": 1024,
+        "inputRight": 666,
+        "buttonLeft": 674,
+        "buttonRight": 718,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 723,
+        "outerLeft": 25
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorFrontier.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorPathFinder.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQKR.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQMR.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorUrvan.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorkicks.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorpickup.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorsedan.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "cotizador%20ASD/prueba.html",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "repuestos.html?marca=Nissan&modelo=NP300",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "repuestos.html?marca=Mazda&modelo=CX-30",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "repuestos.html?marca=Isuzu&modelo=D-MAX",
+        "width": 1024,
+        "inputRight": 594,
+        "buttonLeft": 602,
+        "buttonRight": 646,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 651,
+        "outerLeft": 97
+      },
+      {
+        "file": "ModelosIsuzu.html",
+        "width": 1440,
+        "inputRight": 1002,
+        "buttonLeft": 1010,
+        "buttonRight": 1054,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 1059,
+        "outerLeft": 105
+      },
+      {
+        "file": "ModelosMazda.html",
+        "width": 1440,
+        "inputRight": 1002,
+        "buttonLeft": 1010,
+        "buttonRight": 1054,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 1059,
+        "outerLeft": 105
+      },
+      {
+        "file": "ModelosNissan.html",
+        "width": 1440,
+        "inputRight": 1002,
+        "buttonLeft": 1010,
+        "buttonRight": 1054,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 1059,
+        "outerLeft": 105
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorFrontier.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/CotizadorPathFinder.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQKR.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorQMR.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorUrvan.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorkicks.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorpickup.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/cotizadorsedan.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "cotizador%20ASD/prueba.html",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "repuestos.html?marca=Nissan&modelo=NP300",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "repuestos.html?marca=Mazda&modelo=CX-30",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      },
+      {
+        "file": "repuestos.html?marca=Isuzu&modelo=D-MAX",
+        "width": 1440,
+        "inputRight": 872,
+        "buttonLeft": 880,
+        "buttonRight": 924,
+        "buttonWidth": 44,
+        "buttonHeight": 44,
+        "outerRight": 929,
+        "outerLeft": 235
+      }
+    ],
+    "corporate": [
+      {
+        "width": 320,
+        "columns": 1,
+        "outside": [],
+        "left": 36,
+        "right": 284
+      },
+      {
+        "width": 390,
+        "columns": 1,
+        "outside": [],
+        "left": 36,
+        "right": 354
+      },
+      {
+        "width": 480,
+        "columns": 1,
+        "outside": [],
+        "left": 36,
+        "right": 444
+      },
+      {
+        "width": 481,
+        "columns": 2,
+        "outside": [],
+        "left": 36,
+        "right": 445
+      },
+      {
+        "width": 600,
+        "columns": 2,
+        "outside": [],
+        "left": 36,
+        "right": 564
+      },
+      {
+        "width": 768,
+        "columns": 2,
+        "outside": [],
+        "left": 36,
+        "right": 732
+      },
+      {
+        "width": 1024,
+        "columns": 2,
+        "outside": [],
+        "left": 48,
+        "right": 976
+      },
+      {
+        "width": 1440,
+        "columns": 2,
+        "outside": [],
+        "left": 48,
+        "right": 825.59375
+      }
+    ],
+    "errors": []
+  },
+  "build": {
+    "command": "npm run build",
+    "passed": true,
+    "static_output": "public/",
+    "server_and_env_excluded": true
+  },
+  "inventory": {
+    "records": 129,
+    "source": "Copia del nodo público Repuestos leída durante esta revisión",
+    "original_bytes": 37121,
+    "compact_bytes": 7563,
+    "dump_generated_from_file": true
+  },
+  "live_gemini": {
+    "executed": false,
+    "reason": "No se proporcionó GEMINI_API_KEY. El comando test:chat:live informa NO EJECUTADO y termina con código 2.",
+    "evaluation_included": true
+  },
+  "deployment": {
+    "executed": false,
+    "target": "Vercel Node function + static output"
+  },
+  "production_writes": false,
+  "limitations": [
+    "No se certificó la interpretación del modelo real sin API key.",
+    "Los límites por IP se guardan por instancia; no son un presupuesto global.",
+    "Precios y existencias reflejan Firebase, con caché de hasta 30 segundos.",
+    "No se verificaron Safari, Firefox o dispositivos físicos."
+  ]
+}

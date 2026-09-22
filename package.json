@@ -1,9 +1,17 @@
 {
   "name": "q-parts",
   "private": true,
-  "version": "2.0.2",
+  "version": "2.1.0",
   "type": "module",
+  "engines": { "node": "22.x" },
   "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "node scripts/build.mjs",
+    "chatbot:dump": "node scripts/chatbot-dump.mjs",
+    "test:chat": "node --test tests/chat.test.mjs",
+    "test:chat:browser": "node tests/browser-chat.mjs",
+    "test:chat:live": "node scripts/chatbot-eval.mjs",
+    "test:layout": "node tests/browser-layout.mjs",
     "test": "node --test tests/*.test.mjs",
     "test:browser": "node tests/browser.mjs",
     "test:regressions": "node tests/browser-regressions.mjs",

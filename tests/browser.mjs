@@ -25,6 +25,8 @@ async function fresh(guest=false){
   if(context)await context.close();
   context=await browser.newContext({viewport:{width:1366,height:900}});
   await context.route('**/js/backend.js',route=>route.fulfill({contentType:'text/javascript',body:fs.readFileSync(path.join(here,'mock-backend.js'),'utf8')}));
+  // El contrato completo del chat se comprueba en browser-chat.mjs; aquí solo su posición y navegación.
+  await context.route('**/api/chat',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({answer:'Consulta de motor recibida.',products:[],links:[],context:'Ayuda: catalog'})}));
   // Ni Firebase, ni Formspree, ni Google reciben solicitudes en esta prueba.
   await context.route(/^https?:\/\/(?!127\.0\.0\.1)/,route=>route.abort());
   await context.addInitScript(({data,guest})=>{window.__qpFixture={data,guest};},{data:fixture,guest});

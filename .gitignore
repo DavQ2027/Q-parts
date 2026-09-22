@@ -1,3 +1,11 @@
 node_modules/
 tests/results/
 .DS_Store
+.env
+.env.*
+!.env.example
+.vercel/
+public/
+data/chatbot-catalog.json
+data/chatbot-context.txt
+data/chatbot-schema.json

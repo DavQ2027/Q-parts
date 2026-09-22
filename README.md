@@ -1,8 +1,43 @@
-# Q-Parts 2.0.2
+# Q-Parts 2.1.0
 
-Revisión del proyecto académico de grupo Q Parts · 22 de septiembre de 2026.
+Revisión del proyecto académico de los estudiantes · 22 de septiembre de 2026.
 
-Actualización puntual sobre 2.0.1: presentación de Nissan NP300, Isuzu D-MAX y Mazda CX-30, formato original de la cotización PDF y vaciado del carrito después de generarla. No requiere compilación.
+Actualización de Q Bot para Gemini y el entorno de Grupo Q, más correcciones de texto y buscadores. La interfaz conserva HTML/CSS/JS; el chat ahora necesita una pequeña función Node incluida y preparada para Vercel.
+
+## Cambios de 2.1.0
+
+- **Q Bot con Gemini:** interpreta consultas de repuestos, stock y precio, mantiene un contexto breve y orienta sobre el uso del sitio.
+- **Contexto de Grupo Q:** marcas del catálogo, atención de repuestos, valores publicados, sesión/perfil, cotización en USD y PDF. No inventa sucursales ni condiciones comerciales.
+- **Datos comprobados:** cada tarjeta toma nombre, código, marca, modelo, año, precio y existencias de Firebase; distingue referencias entre modelos y datos no informados.
+- **Añadir desde el chat:** propone cantidades y requiere pulsar el botón del producto. Comprueba de nuevo el inventario y utiliza el carrito existente. Si falta sesión, ofrece el enlace para entrar.
+- **API key privada:** `/api/chat` la lee de `GEMINI_API_KEY`; `.env.example` indica el espacio para completarla. El navegador no recibe la clave.
+- **Consumo acotado:** dump por columnas y diccionario, una llamada máxima por consulta, hasta 768 tokens de salida, memoria de cuatro mensajes, cachés de 30 s y límites básicos por instancia.
+- **Texto en móvil:** los cuatro beneficios bajo “Grupo Q” se distribuyen en una o dos columnas para evitar que los textos se monten.
+- **Buscadores:** campo y botón X en columnas separadas; botón de 44 px y eliminación de la X nativa duplicada.
+
+### Activación rápida
+
+1. Copia `.env.example` a **`.env.local`** y completa **`GEMINI_API_KEY=`** con tu clave de Google AI Studio.
+2. Con Node.js 22, ejecuta **`npm run dev`** y abre `http://localhost:3000/`.
+3. En **Vercel → Settings → Environment Variables**, agrega **`GEMINI_API_KEY`** para Production/Preview según corresponda y realiza un nuevo despliegue. La raíz del proyecto debe contener `package.json`, `api/` y `vercel.json`.
+
+La única credencial nueva obligatoria es la de Gemini. **Live Server/Python/GitHub Pages no ejecutan la API del chat.** El modelo predeterminado es `gemini-3.1-flash-lite`, con nivel gratuito sujeto a las cuotas de Google; no se garantiza consumo ilimitado ni gasto cero si se habilita facturación.
+
+Lee **[docs/QBOT_GEMINI.md](docs/QBOT_GEMINI.md)** para los pasos completos de Vercel, el prompt, el dump, consumo, pruebas y límites. El contexto editable del entorno de Grupo Q está en `server/chat/knowledge.js`; el prompt está en `server/chat/prompt.js`.
+
+### Alcance de esta entrega
+
+Se modifica la interfaz del chatbot en `Q parts/index.html`, `Q parts/js/home.js` y el módulo nuevo `chat-client.js`; los estilos compartidos corrigen también los textos y buscadores indicados. Se añaden servidor, función API, scripts de desarrollo/exportación, configuración de Vercel, documentación y pruebas. Las operaciones existentes de Firebase, carrito, perfil, catálogo, animación de acceso y PDF conservan su código.
+
+El ZIP incluye en `data/` una instantánea de inspección del catálogo público, el prompt con esa copia y el esquema de salida. **No es un respaldo activo del inventario:** el chat lee Firebase al funcionar. No se exportan nodos de usuarios ni carritos.
+
+### Verificación de 2.1.0
+
+Se aprobaron **78 pruebas de lógica e integración** (53 existentes y 25 nuevas), **7 flujos del chat** en Chromium 153 con cuatro anchos, **80 vistas de buscadores** y **8 vistas del bloque de Grupo Q**. También se verificó la salida de `npm run build` y la exclusión de módulos privados y variables de entorno del sitio público. Los resultados se documentan en `docs/VERIFICACION_2.1.json`. Las pruebas del proveedor se realizan con respuestas simuladas. **No se ha ejecutado Gemini con una clave real ni se ha desplegado en tu cuenta de Vercel.** Se incluye `npm run test:chat:live` para completar esa comprobación después de configurar la clave.
+
+## Historial
+
+La versión 2.0.2 restauró la presentación de NP300, D-MAX y CX-30, el formato de la cotización y el vaciado posterior del carrito. Sus comprobaciones y las de versiones anteriores se conservan a continuación como historial.
 
 ## Cambios de 2.0.2
 
@@ -70,19 +105,9 @@ En la entrega 2.0.1, el resto de los archivos de aplicación de la versión 2.0 
 
 ## Cómo abrir el proyecto
 
-1. Descomprime `Q-parts.zip` y abre la carpeta `Q-parts` en Visual Studio Code.
-2. Abre una terminal en esa carpeta, donde está este README.
-3. En Windows, con Python instalado, ejecuta:
+Descomprime `Q-parts.zip`, abre la carpeta `Q-parts` en VS Code y sigue la activación de 2.1.0 indicada arriba. La entrada raíz lleva a `Q parts/index.html`.
 
-   ```powershell
-   py -m http.server 8000
-   ```
-
-   En otros sistemas puedes usar `python3 -m http.server 8000`.
-4. Abre `http://localhost:8000/` en el navegador. La entrada raíz conduce a `Q parts/index.html`.
-5. También puedes usar Live Server de VS Code. Sirve el proyecto por HTTP; abrir los archivos con doble clic puede bloquear los módulos JavaScript.
-
-La navegación, los estilos y los iconos son locales. El inventario y las cuentas requieren conexión con Firebase. El formulario de contacto conserva el servicio Formspree configurado en el proyecto original. Google Fonts y algunas imágenes de inventario pueden requerir Internet; hay tipografía alternativa e imagen de respaldo.
+La navegación, fuentes e iconos tienen recursos locales. El inventario y las cuentas requieren Firebase; el formulario de contacto conserva Formspree. Algunas imágenes de terceros necesitan Internet. Un servidor estático permite explorar la interfaz, pero Q Bot necesita `npm run dev` o Vercel.
 
 ## Funciones conservadas de 2.0
 
@@ -176,7 +201,7 @@ La navegación se ejercitó con clics y teclado y se revisaron capturas de escri
 
 ### Ejecutar las pruebas
 
-Con Node.js 20 o superior:
+Con Node.js 22:
 
 ```bash
 npm test
@@ -205,7 +230,7 @@ Los scripts inician un servidor local temporal. Los resultados, capturas y PDF d
 
 No se publicaron cambios ni se enviaron commits al repositorio remoto. El ZIP excluye `.git` y `node_modules`. Para incorporarlo a tu clon existente, copia los archivos del proyecto sobre ese clon, conserva su carpeta `.git` y revisa los cambios antes de confirmarlos.
 
-Q Bot conserva respuestas predefinidas: no consulta una IA ni valida averías o compatibilidad por VIN. La cotización es un resumen de referencia, no una compra ni una orden oficial.
+Desde 2.1.0, Q Bot interpreta consultas con Gemini y muestra hechos verificados del catálogo. No realiza diagnósticos ni valida compatibilidad por VIN. La cotización sigue siendo un resumen de referencia, no una compra ni una orden oficial.
 
 ## Referencias técnicas
 

@@ -1,4 +1,5 @@
-import { normalize, pageURL } from './utils.js';
+import { pageURL } from './utils.js';
+import { initChatClient } from './chat-client.js';
 export function initHome() {
   const trigger = document.querySelector('#draggable-chat-btn'); if (!trigger) return;
   const chat = document.querySelector('#chatWindow');
@@ -11,7 +12,7 @@ export function initHome() {
   trigger.title = 'Abrir Q Bot. En escritorio puedes arrastrar el botón.';
   chat.setAttribute('role','region'); chat.setAttribute('aria-label','Q Bot, ayuda de repuestos');
   messages.setAttribute('role','log'); messages.setAttribute('aria-live','polite');
-  input.setAttribute('aria-label','Escribe tu consulta'); input.maxLength = 500;
+  input.setAttribute('aria-label','Escribe tu consulta'); input.maxLength = 700;
   send.setAttribute('aria-label','Enviar consulta'); close.setAttribute('aria-label','Cerrar Q Bot');
   function position() {
     if (!chat.classList.contains('is-open')) return;
@@ -45,27 +46,7 @@ export function initHome() {
   ['pointerup','pointercancel','lostpointercapture'].forEach(name=>trigger.addEventListener(name,()=>{drag=null;}));
   addEventListener('resize', () => { trigger.style.left=''; trigger.style.top=''; trigger.style.right=''; trigger.style.bottom=''; position(); });
   window.visualViewport?.addEventListener('resize', position);
-  function response(query) {
-    const text = normalize(query);
-    if (/freno|pastilla|frenar/.test(text)) return 'Busca la categoría de frenos en el catálogo de tu modelo. Confirma la compatibilidad de pastillas y discos con un asesor antes de comprarlos.';
-    if (/aceite|filtro/.test(text)) return 'El filtro y el aceite dependen del modelo y motor. Consulta el manual de tu vehículo y busca el repuesto por nombre o código en el catálogo.';
-    if (/amortiguador|suspension|bache|golpe/.test(text)) return 'Busca en suspensión o dirección para tu modelo. Si notas ruido o rebote, una revisión presencial puede determinar qué componente necesita atención.';
-    if (/motor|arranc|electr/.test(text)) return 'Puedes explorar los componentes del motor de tu modelo. Una revisión técnica presencial es necesaria para identificar una avería.';
-    if (/donde|sucursal|tienda|ubicacion|contacto/.test(text)) return 'En Contacto encontrarás los medios de atención. Confirma con un asesor la sucursal, horario y disponibilidad antes de visitar.';
-    if (/cotiz|carrito|cantidad/.test(text)) return 'Pulsa Añadir en un repuesto. Usa +, − o Eliminar en el panel que aparece. También puedes ajustar cantidades y descargar un PDF en Cotización.';
-    if (/nissan|mazda|isuzu/.test(text)) return 'Selecciona la marca y el modelo en Catálogo. La búsqueda filtra por nombre, código y categoría; las existencias se muestran en cada repuesto.';
-    return 'Puedo orientarte sobre el catálogo, la cotización y categorías de repuestos. Soy un asistente de respuestas predefinidas; confirma diagnósticos y compatibilidad con un asesor.';
-  }
-  function submit() {
-    const text = input.value.trim(); if (!text) { input.focus(); return; }
-    const user = document.createElement('div'); user.className='chat-bubble user-bubble'; user.textContent=text; messages.append(user); input.value='';
-    setTimeout(()=>{
-      const bot=document.createElement('div'); bot.className='chat-bubble bot-bubble'; bot.textContent=response(text); messages.append(bot);
-      while(messages.children.length>80)messages.firstElementChild.remove(); messages.scrollTop=messages.scrollHeight;
-    },350);
-    messages.scrollTop=messages.scrollHeight;
-  }
-  send.addEventListener('click',submit); input.addEventListener('keydown',event=>{if(event.key==='Enter' && !event.isComposing){event.preventDefault();submit();}});
+  initChatClient({ input, send, messages });
   document.querySelector('#btn-search')?.addEventListener('click',()=>location.assign(pageURL('carrito.html')));
   document.querySelectorAll('a[href$="#qbot"]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();open();}));
   if(location.hash==='#qbot')open();
