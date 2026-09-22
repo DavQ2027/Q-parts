@@ -1,0 +1,565 @@
+{
+  "Repuestos": {
+    "001001": {
+      "Auto": "Nissan",
+      "Model": "Frontier",
+      "ModelEx": "001001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "001002": {
+      "Auto": "Nissan",
+      "Model": "Frontier",
+      "ModelEx": "001002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "001003": {
+      "Auto": "Nissan",
+      "Model": "Frontier",
+      "ModelEx": "001003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "001004": {
+      "Auto": "Nissan",
+      "Model": "Frontier",
+      "ModelEx": "001004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "002001": {
+      "Auto": "Nissan",
+      "Model": "Kicks",
+      "ModelEx": "002001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "002002": {
+      "Auto": "Nissan",
+      "Model": "Kicks",
+      "ModelEx": "002002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "002003": {
+      "Auto": "Nissan",
+      "Model": "Kicks",
+      "ModelEx": "002003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "002004": {
+      "Auto": "Nissan",
+      "Model": "Kicks",
+      "ModelEx": "002004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "003001": {
+      "Auto": "Nissan",
+      "Model": "Sedan",
+      "ModelEx": "003001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "003002": {
+      "Auto": "Nissan",
+      "Model": "Sedan",
+      "ModelEx": "003002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "003003": {
+      "Auto": "Nissan",
+      "Model": "Sedan",
+      "ModelEx": "003003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "003004": {
+      "Auto": "Nissan",
+      "Model": "Sedan",
+      "ModelEx": "003004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "004001": {
+      "Auto": "Nissan",
+      "Model": "Pathfinder",
+      "ModelEx": "004001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "004002": {
+      "Auto": "Nissan",
+      "Model": "Pathfinder",
+      "ModelEx": "004002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "004003": {
+      "Auto": "Nissan",
+      "Model": "Pathfinder",
+      "ModelEx": "004003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "004004": {
+      "Auto": "Nissan",
+      "Model": "Pathfinder",
+      "ModelEx": "004004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "005001": {
+      "Auto": "Nissan",
+      "Model": "Urvan",
+      "ModelEx": "005001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "005002": {
+      "Auto": "Nissan",
+      "Model": "Urvan",
+      "ModelEx": "005002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "005003": {
+      "Auto": "Nissan",
+      "Model": "Urvan",
+      "ModelEx": "005003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "005004": {
+      "Auto": "Nissan",
+      "Model": "Urvan",
+      "ModelEx": "005004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "006001": {
+      "Auto": "Nissan",
+      "Model": "Frontier NP300",
+      "ModelEx": "006001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "006002": {
+      "Auto": "Nissan",
+      "Model": "Frontier NP300",
+      "ModelEx": "006002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "006003": {
+      "Auto": "Nissan",
+      "Model": "Frontier NP300",
+      "ModelEx": "006003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "006004": {
+      "Auto": "Nissan",
+      "Model": "Frontier NP300",
+      "ModelEx": "006004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "007001": {
+      "Auto": "Mazda",
+      "Model": "PickUp",
+      "ModelEx": "007001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "007002": {
+      "Auto": "Mazda",
+      "Model": "PickUp",
+      "ModelEx": "007002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "007003": {
+      "Auto": "Mazda",
+      "Model": "PickUp",
+      "ModelEx": "007003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "007004": {
+      "Auto": "Mazda",
+      "Model": "PickUp",
+      "ModelEx": "007004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "008001": {
+      "Auto": "Mazda",
+      "Model": "Mazda CX-5",
+      "ModelEx": "008001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "008002": {
+      "Auto": "Mazda",
+      "Model": "Mazda CX-5",
+      "ModelEx": "008002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "008003": {
+      "Auto": "Mazda",
+      "Model": "Mazda CX-5",
+      "ModelEx": "008003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "008004": {
+      "Auto": "Mazda",
+      "Model": "Mazda CX-5",
+      "ModelEx": "008004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "009001": {
+      "Auto": "Mazda",
+      "Model": "CX-30",
+      "ModelEx": "009001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "009002": {
+      "Auto": "Mazda",
+      "Model": "CX-30",
+      "ModelEx": "009002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "009003": {
+      "Auto": "Mazda",
+      "Model": "CX-30",
+      "ModelEx": "009003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "009004": {
+      "Auto": "Mazda",
+      "Model": "CX-30",
+      "ModelEx": "009004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "010001": {
+      "Auto": "Isuzu",
+      "Model": "QMR",
+      "ModelEx": "010001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "010002": {
+      "Auto": "Isuzu",
+      "Model": "QMR",
+      "ModelEx": "010002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "010003": {
+      "Auto": "Isuzu",
+      "Model": "QMR",
+      "ModelEx": "010003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "010004": {
+      "Auto": "Isuzu",
+      "Model": "QMR",
+      "ModelEx": "010004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "011001": {
+      "Auto": "Isuzu",
+      "Model": "QKR",
+      "ModelEx": "011001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "011002": {
+      "Auto": "Isuzu",
+      "Model": "QKR",
+      "ModelEx": "011002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "011003": {
+      "Auto": "Isuzu",
+      "Model": "QKR",
+      "ModelEx": "011003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "011004": {
+      "Auto": "Isuzu",
+      "Model": "QKR",
+      "ModelEx": "011004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    },
+    "012001": {
+      "Auto": "Isuzu",
+      "Model": "D-MAX",
+      "ModelEx": "012001",
+      "NombredelR": "Tubo de escape",
+      "Precio": 180.8,
+      "Existencias": 5,
+      "imagen": "img/tubo.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "012002": {
+      "Auto": "Isuzu",
+      "Model": "D-MAX",
+      "ModelEx": "012002",
+      "NombredelR": "Sensor de oxígeno",
+      "Precio": 30.5,
+      "Existencias": 15,
+      "imagen": "img/surtidor.webp",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "012003": {
+      "Auto": "Isuzu",
+      "Model": "D-MAX",
+      "ModelEx": "012003",
+      "NombredelR": "Soporte de escape",
+      "Precio": 20.68,
+      "Existencias": 10,
+      "imagen": "img/montaje.jpg",
+      "tag": "Sistema de Escape",
+      "year": "2024"
+    },
+    "012004": {
+      "Auto": "Isuzu",
+      "Model": "D-MAX",
+      "ModelEx": "012004",
+      "NombredelR": "Faro delantero",
+      "Precio": 95,
+      "Existencias": 0,
+      "imagen": "img/fdelantero.jpg",
+      "tag": "Faros Delanteros LED",
+      "year": "2024"
+    }
+  },
+  "usuarios": {
+    "qa-user": {
+      "nombre": "Estudiante de prueba",
+      "dui": "012345678",
+      "telefono": "77778888",
+      "direccion": "San Miguel, El Salvador",
+      "giro": "Estudiante",
+      "Registro": "0123456",
+      "correo": "prueba@example.com"
+    }
+  },
+  "carrito": {
+    "qa-user": {
+      "old1": {
+        "codigo": "001001",
+        "nombre": "Tubo de escape",
+        "cantidad": 1,
+        "precio": 180.8,
+        "imagen": "img/tubo.jpg",
+        "auto": "Nissan",
+        "modelo": "Frontier"
+      },
+      "old2": {
+        "codigo": "001001",
+        "nombre": "Tubo de escape",
+        "cantidad": 2,
+        "precio": 180.8,
+        "imagen": "img/tubo.jpg",
+        "auto": "Nissan",
+        "modelo": "Frontier"
+      }
+    }
+  }
+}

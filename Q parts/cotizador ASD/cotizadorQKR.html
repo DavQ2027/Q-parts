@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>coti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-   <link rel="icon" type="image/png" href="img/logoicon.png">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Repuestos Isuzu QKR | Q-Parts</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="../img/logoicon.png" rel="icon" type="image/png"/>
+<style>
     :root {
       --primary-blue: #0b2545;
       --secondary-blue: #134074;
@@ -318,15 +318,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
     }
-  </style>
-
-
-
-
-</head>
-<body>
-
- <style>
+  </style><style>
 #navegacion {
   display: flex;
   justify-content: space-between;
@@ -424,332 +416,59 @@
 
 
 
-</style>
-   
-
-<nav id="navegacion">
-
-  <div id="izquierda">
-    <img src="../img/Q parts.png" alt="Logo Q parts">
-  </div>
-
-  <div id="centro">
-    <a href="../index.html">Inicio</a>
-    <a href="../catalogodemarcas.html">Catálogo</a>
-    
-    <a href="../nosotros.html">Nosotros</a>
-    <a href="../contacto.html">Contacto</a>
-  </div>
-
-  <div id="derecha">
-    <a href="../carrito.html"> Cotización</a>
-    <a href="Inicio de sesion.html" id="iniciosesion"><button> Iniciar sesión</button></a>
-  </div>
-
-</nav>
-
-  <main>
-    <div class="container">
-      <div class="viewer-wrapper" id="viewerContainer">
-        
-        <img src="img/QKR DETAILS.jpg" alt="Plataforma de Vehículo" class="vehicle-img" id="truckImage">
-
-        <svg class="lines-layer" id="svgLayer" viewBox="0 0 1000 600" preserveAspectRatio="none">
-          <circle cx="790" cy="425" r="4" class="point-origin" />
-          <path d="M 790 425 L 860 480 L 890 480" class="line-path" />
-
-          <circle cx="830" cy="380" r="4" class="point-origin" />
-          <path d="M 830 380 L 900 340 L 920 340" class="line-path" />
-
-          <circle cx="600" cy="300" r="4" class="point-origin" />
-<path d="M 600 300 L 720 180 L 760 180" class="line-path"></path>
-
-          <circle cx="510" cy="240" r="4" class="point-origin" />
-          <path d="M 510 240 L 510 100 L 540 100" class="line-path" />
-
-          <circle cx="230" cy="220" r="4" class="point-origin" />
-          <path d="M 230 220 L 160 130 L 120 130" class="line-path" />
-
-          <circle cx="605" cy="510" r="4" class="point-origin" />
-<path d="M 605 510 L 650 560 L 690 560" class="line-path"></path>
-          <circle cx="200" cy="330" r="4" class="point-origin" />
-          <path d="M 200 330 L 80 530 L 50 530" class="line-path"></path>
-        </svg>
-
-        <div class="hotspot-tag" style="top: 80%; left: 89%;" data-title="Faros Delanteros LED" data-desc="Sistema de iluminación adaptativa con tecnología Bi-LED.">
-          <span>Faros</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 56.6%; left: 92%;" data-title="Motor y Parrilla" data-desc="Parrilla optimizada para refrigeración de alto flujo y acceso mecánico.">
-          <span>Motor</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 30%; left: 76%;" data-title="Parabrisas" data-desc="Cristal laminado acústico con protección UV e integración de sensores ADAS.">
-          <span>Parabrisas</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 16.6%; left: 54%;" data-title="Cabina y Habitáculo" data-desc=" Estructura reforzada con aislamiento acústico, protección contra impactos y controles ergonómicos de conducción.">
-          <span>Cabina</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 21.6%; left: 12%;" data-title="Sistema de Transmisión y Chasis" data-desc="Conjunto de caja de cambios, eje cardán y diferencial expuesto sobre la estructura del bastidor de alta resistencia.">
-          <span>Transmisión</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 93.3%; left: 69%;" data-title="Rueda y Neumáticos" data-desc="Rin de aleación con discos ventilados y sistema antibloqueo ABS.">
-          <span>Neumáticos</span>
-        </div>
-
-        <div class="hotspot-tag" style="top: 88.3%; left: 5%;" data-title="Sistema de Frenos" data-desc="Discos y tambores con tecnología de frenado antibloqueo y distribución electrónica de frenado para máxima seguridad.">
-          <span>Frenos</span>
-        </div>
-
-      </div>
-
-      <div class="info-card">
-        <div>
-          <div class="info-title" id="infoTitle">Selecciona una parte</div>
-          <div class="info-desc" id="infoDesc">Pasa el cursor o presiona los botones sobre la imagen para inspeccionar los componentes.</div>
-          
-
-        </div>
-      </div>
-      <div class="CATALOGO" id="SeccionCatalogo">
-        <h3 id="Ctitulo">Catálogo de la zona</h3>
-       <div id="contenedor" class="container2" ></div>
-    </div>
-  </main>
-
-  
-        <script type="module">
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getDatabase, ref, onValue, query, orderByChild, equalTo, get, push, set} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const firebaseConfig = {
-    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
-    authDomain: "sparepartsq-f5f03.firebaseapp.com",
-    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
-    projectId: "sparepartsq-f5f03",
-    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
-    messagingSenderId: "148056463900",
-    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
-    measurementId: "G-XB8Z574X6M"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
-  const auth = getAuth(app);
-
-
-
-const tags = document.querySelectorAll('.hotspot-tag');
-const infoTitle = document.getElementById('infoTitle');
-const infoDesc = document.getElementById('infoDesc');
-const catalogSection = document.getElementById('SeccionCatalogo');
-const catalogHeading = document.getElementById('Ctitulo');
-const catalogGrid = document.getElementById('contenedor');
-
-const repuestosRef = ref(db, "Repuestos"); 
-
-
-tags.forEach(tag => {
-  tag.addEventListener('mouseenter', () => {
-    if (!tag.classList.contains('active')) {
-      infoTitle.innerText = tag.dataset.title;
-      infoDesc.innerText = tag.dataset.desc;
-    }
-  });
-
-  tag.addEventListener('click', () => {
-    tags.forEach(t => t.classList.remove('active'));
-    tag.classList.add('active');
-
-    infoTitle.innerText = tag.dataset.title;
-    infoDesc.innerText = tag.dataset.desc;
-
-    catalogSection.style.display = 'block';
-    catalogHeading.innerText = `Productos disponibles para: ${tag.dataset.title}`;
-
-
-    mostrarCatalogo(tag);
-  });
-});
-
-function mostrarCatalogo(tag) {
-  catalogGrid.innerHTML = "";
-
-  get(repuestosRef).then((snapshot) => {
-    if (!snapshot.exists()) {
-      catalogGrid.innerHTML = "<p>No hay productos disponibles</p>";
-      return;
-    }
-
-    snapshot.forEach((childSnapshot) => {
-      const repuesto = childSnapshot.val();
-      const clave = childSnapshot.key;
-
-     
-      if (repuesto.tag == tag.dataset.title && repuesto.Model == "QMR"){
-
-      const card = document.createElement('div');
-      card.className = 'product-card';
-      card.innerHTML = `
-        <div class="telefono tamano" style="border: 2px solid #e2e4e9; height: 135px; border-radius: 5px; background: white; ">
-          <img src="${repuesto.imagen}" height="124px" style="border-radius: 10px;" class="img2" alt="">
-          <div class="elementos2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 500; width: 300px;">
-            <div style="font-size: larger;">${repuesto.NombredelR}</div>
-            <div style="font-size: smaller; color: #0B2545;">${repuesto.ModelEx || ''}</div>
-            <div style="font-size: small;">En Existencia: ${repuesto.Existencias}</div>
-          </div>
-          <div class="texto2" style="font-weight: bolder; font-size: x-large; color: #D90429; width: 40px;">$${repuesto.Precio}</div>
-          <button type="button" class="botones2" data-key="${clave}"
-            style="background: #0B2545; color: white; font-weight: bold; padding: 5px 25px; border-radius: 5px; border: none;">
-            Añadir
-          </button>
-        </div>
-      `;
-      catalogGrid.appendChild(card);
-    }});
-
-
-   
-    catalogGrid.querySelectorAll('.botones2').forEach(btn => {
-      btn.addEventListener('click', () => {
-        agregarAlCarrito(btn.dataset.key);
-      });
-    });
-  });
-}
-
-    let toastbox = document.getElementById('toastbox');
-
-window.notificacion = function(msg) {
-  const toastbox = document.getElementById('toastbox');
-
-  if (!toastbox) {
-    console.error('No se encontró #toastbox');
-    alert(msg);
-    return;
-  }
-
-  const toast = document.createElement('div');
-  toast.className = 'toast';
-  toast.textContent = msg;
-  toastbox.appendChild(toast);
-
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.4s';
-    setTimeout(() => toast.remove(), 400);
-  }, 3500);
-};
-
-   
-
-  async function agregarAlCarrito(clave) {
-
-
-     const usuario = auth.currentUser;
-
-  
-    if (!usuario) {
-        alert("Debes iniciar sesión para añadir productos al carrito");
-        return;
-    }
-
-
-    const uid = usuario.uid;
-
-
-
-
-    const snap = await get(ref(db, `Repuestos/${clave}`));
-
-    if (!snap.exists()) {
-      alert("Este repuesto ya no está disponible");
-      return;
-    }
-
-    const producto = snap.val();
-
-    const item = {
-      nombre: producto.NombredelR,
-      codigo: clave,
-      auto: producto.Auto,
-      modelo: producto.Model,
-      year: producto.year,
-      precio: parseFloat(producto.Precio),
-      cantidad: 1,
-    imagen: producto.imagen,
-      agregadoEn: Date.now()
-    };
-
-    const nuevoItemRef = push(ref(db,`carrito/${uid}`));
-    set(nuevoItemRef, item)
-      .then(() => {
-        const mensaje = `"${item.nombre}" (${clave}) enviado a cotizar`;
-      notificacion(mensaje);
-      })
-      .catch((error) => {console.error("Error al añadir:", error);
-      notificacion("Error al añadir el producto al carrito");});
-  }
-
-          onAuthStateChanged(auth,(user) => {
-
-        if (user){
-            inicio.classList.add("logeado");
-            inicio.innerHTML = "Cerrar Sesion"
-        } else
-        inicio.classList.add("logeado");
-
-    });
-</script>
-
-<script type="module">
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-     import {
-    getAuth,
-    onAuthStateChanged
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-   const firebaseConfig = {
-    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
-    authDomain: "sparepartsq-f5f03.firebaseapp.com",
-    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
-    projectId: "sparepartsq-f5f03",
-    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
-    messagingSenderId: "148056463900",
-    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
-    measurementId: "G-XB8Z574X6M"
-  };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    const inicio = document.getElementById('iniciosesion');
-    
-
-    onAuthStateChanged(auth,(user) => {
-
-        if (user){
-            inicio.classList.add("logeado");
-            inicio.innerHTML = "Cerrar Sesion"
-        } else
-        inicio.classList.remove("logeado");
-
-    });
-
-
-
-
-
-    
-</script>
-
-
-
-</body>
+</style><link href="../css/qparts.css" rel="stylesheet"/></head>
+<body data-brand="Isuzu" data-model="QKR" data-page="catalog"><a class="qp-skip" href="#qp-main">Saltar al contenido</a><header class="qp-header"><nav aria-label="Navegación principal" class="qp-nav"><a class="qp-logo" href="../index.html"><img alt="" src="../img/Q parts.png"/><span>Q-PARTS</span></a><button aria-controls="qp-menu" aria-expanded="false" aria-label="Abrir menú" class="qp-menu-toggle" id="qp-menu-toggle" type="button"><i aria-hidden="true" class="qp-open-icon" data-lucide="menu"></i><i aria-hidden="true" class="qp-close-icon" data-lucide="x"></i></button><div class="qp-menu" id="qp-menu"><a href="../index.html"><i data-lucide="house"></i>Inicio</a><a href="../catalogodemarcas.html"><i data-lucide="grid-2x2"></i>Catálogo</a><a href="../nosotros.html"><i data-lucide="users"></i>Nosotros</a><a href="../contacto.html"><i data-lucide="mail"></i>Contacto</a><a href="../carrito.html"><i data-lucide="shopping-cart"></i>Cotización <span id="qp-cart-count">0</span></a><a data-auth="in" hidden="" href="../perfil.html"><i data-lucide="user-round"></i>Mi perfil</a><button data-auth="in" hidden="" id="qp-logout" type="button"><i data-lucide="log-out"></i>Cerrar sesión</button><a class="qp-login" data-auth="out" href="../Inicio de sesion.html"><i data-lucide="log-in"></i>Iniciar sesión</a></div></nav></header><div id="qp-main" tabindex="-1"></div>
+<main>
+<div class="container">
+<div class="viewer-wrapper" id="viewerContainer">
+<img alt="Plataforma de Vehículo" class="vehicle-img" id="truckImage" src="img/QKR DETAILS.jpg"/>
+<svg class="lines-layer" id="svgLayer" preserveaspectratio="none" viewbox="0 0 1000 600">
+<circle class="point-origin" cx="790" cy="425" r="4"></circle>
+<path class="line-path" d="M 790 425 L 860 480 L 890 480"></path>
+<circle class="point-origin" cx="830" cy="380" r="4"></circle>
+<path class="line-path" d="M 830 380 L 900 340 L 920 340"></path>
+<circle class="point-origin" cx="600" cy="300" r="4"></circle>
+<path class="line-path" d="M 600 300 L 720 180 L 760 180"></path>
+<circle class="point-origin" cx="510" cy="240" r="4"></circle>
+<path class="line-path" d="M 510 240 L 510 100 L 540 100"></path>
+<circle class="point-origin" cx="230" cy="220" r="4"></circle>
+<path class="line-path" d="M 230 220 L 160 130 L 120 130"></path>
+<circle class="point-origin" cx="605" cy="510" r="4"></circle>
+<path class="line-path" d="M 605 510 L 650 560 L 690 560"></path>
+<circle class="point-origin" cx="200" cy="330" r="4"></circle>
+<path class="line-path" d="M 200 330 L 80 530 L 50 530"></path>
+</svg>
+<div class="hotspot-tag" data-desc="Sistema de iluminación adaptativa con tecnología Bi-LED." data-title="Faros Delanteros LED" style="top: 80%; left: 89%;">
+<span>Faros</span>
+</div>
+<div class="hotspot-tag" data-desc="Parrilla optimizada para refrigeración de alto flujo y acceso mecánico." data-title="Motor y Parrilla" style="top: 56.6%; left: 92%;">
+<span>Motor</span>
+</div>
+<div class="hotspot-tag" data-desc="Cristal laminado acústico con protección UV e integración de sensores ADAS." data-title="Parabrisas" style="top: 30%; left: 76%;">
+<span>Parabrisas</span>
+</div>
+<div class="hotspot-tag" data-desc=" Estructura reforzada con aislamiento acústico, protección contra impactos y controles ergonómicos de conducción." data-title="Cabina y Habitáculo" style="top: 16.6%; left: 54%;">
+<span>Cabina</span>
+</div>
+<div class="hotspot-tag" data-desc="Conjunto de caja de cambios, eje cardán y diferencial expuesto sobre la estructura del bastidor de alta resistencia." data-title="Sistema de Transmisión y Chasis" style="top: 21.6%; left: 12%;">
+<span>Transmisión</span>
+</div>
+<div class="hotspot-tag" data-desc="Rin de aleación con discos ventilados y sistema antibloqueo ABS." data-title="Rueda y Neumáticos" style="top: 93.3%; left: 69%;">
+<span>Neumáticos</span>
+</div>
+<div class="hotspot-tag" data-desc="Discos y tambores con tecnología de frenado antibloqueo y distribución electrónica de frenado para máxima seguridad." data-title="Sistema de Frenos" style="top: 88.3%; left: 5%;">
+<span>Frenos</span>
+</div>
+</div>
+<div class="info-card">
+<div>
+<div class="info-title" id="infoTitle">Selecciona una parte</div>
+<div class="info-desc" id="infoDesc">Pasa el cursor o presiona los botones sobre la imagen para inspeccionar los componentes.</div>
+</div>
+</div>
+<div class="CATALOGO" id="SeccionCatalogo">
+<h3 id="Ctitulo">Catálogo de la zona</h3>
+<div class="container2" id="contenedor"></div>
+</div>
+</div></main><script src="../vendor/lucide-1.8.0.min.js"></script><script src="../js/app.js" type="module"></script><noscript>Activa JavaScript para iniciar sesión, buscar repuestos y usar la cotización.</noscript></body>
 </html>

@@ -1,0 +1,772 @@
+{
+  "fecha": "2026-09-22",
+  "navegador": "153.0.8010.0",
+  "pruebas_logica": 41,
+  "flujos": [
+    "23 páginas: navegación, perfil y breakpoints 360/768/1024/1440",
+    "Entrada raíz redirige a la página válida",
+    "Búsqueda inmediata por nombre sin acentos, código y estado vacío",
+    "Zonas interactivas y filtro por categoría",
+    "Panel rápido: suma/resta, tope de stock y cierre a los 2 segundos",
+    "Carrito consolidado: controles, total y persistencia al recargar",
+    "Descarga de PDF conserva los productos",
+    "Vaciar requiere confirmación y deshabilita PDF cuando no hay productos",
+    "Los modelos Kicks, QKR, QMR, CX-5, NP300 y D-MAX no se mezclan",
+    "Búsqueda por marca incluye sus modelos",
+    "Perfil: validaciones, guardado y solicitud de verificación de correo",
+    "Cerrar sesión desde perfil móvil: diálogo encima del menú y destino válido",
+    "Perfil sin sesión redirige al login con retorno",
+    "Registro: obligatorios, confirmación, mostrar contraseña y creación simulada",
+    "Login: formato, error de credenciales y envío con Enter para contraseñas anteriores",
+    "Manejador de Google aislado del formulario obligatorio (simulado)",
+    "Contacto: obligatorios, recuperación de error y envío simulado sin borrar texto fallido",
+    "Q Bot cerca del botón en escritorio/tablet, centrado en móvil, consulta y cierre",
+    "Información de marca abre y cierra con teclado",
+    "Error al guardar no muestra confirmación falsa"
+  ],
+  "vistas": [
+    {
+      "file": "Inicio%20de%20sesion.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "LLENADO.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "ModelosIsuzu.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "ModelosMazda.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "ModelosNissan.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "Registrarse.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "carrito.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "catalogodemarcas.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "contacto.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "nosotros.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "perfil.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "repuestos.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorFrontier.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorPathFinder.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQKR.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQMR.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorUrvan.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorkicks.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorpickup.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorsedan.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/prueba.html",
+      "width": 360,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 340,
+      "overflow": []
+    },
+    {
+      "file": "Inicio%20de%20sesion.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "LLENADO.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "ModelosIsuzu.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "ModelosMazda.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "ModelosNissan.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "Registrarse.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "carrito.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "catalogodemarcas.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "contacto.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "nosotros.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "perfil.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "repuestos.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorFrontier.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorPathFinder.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQKR.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQMR.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorUrvan.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorkicks.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorpickup.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorsedan.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/prueba.html",
+      "width": 768,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 748,
+      "overflow": []
+    },
+    {
+      "file": "Inicio%20de%20sesion.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "LLENADO.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "ModelosIsuzu.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "ModelosMazda.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "ModelosNissan.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "Registrarse.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "carrito.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "catalogodemarcas.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "contacto.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "nosotros.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "perfil.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "repuestos.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorFrontier.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorPathFinder.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQKR.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQMR.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorUrvan.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorkicks.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorpickup.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorsedan.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/prueba.html",
+      "width": 1024,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 1004,
+      "overflow": []
+    },
+    {
+      "file": "Inicio%20de%20sesion.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "LLENADO.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "ModelosIsuzu.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "ModelosMazda.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "ModelosNissan.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "Registrarse.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "carrito.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "catalogodemarcas.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "contacto.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "index.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "nosotros.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "perfil.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "repuestos.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorFrontier.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/CotizadorPathFinder.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorMazdacx-5.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQKR.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorQMR.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorUrvan.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorkicks.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorpickup.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/cotizadorsedan.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    },
+    {
+      "file": "cotizador%20ASD/prueba.html",
+      "width": 1440,
+      "headerTop": 0,
+      "headerHeight": 80,
+      "toggleRight": 0,
+      "overflow": []
+    }
+  ],
+  "rutas": {
+    "html_pages": 24,
+    "references_checked": 490,
+    "broken": [],
+    "bad_fragments": []
+  },
+  "servicios_externos": "Escrituras, autenticación y contacto simulados en navegador; inventario de producción leído sin escritura."
+}

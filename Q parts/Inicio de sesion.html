@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio de sesion</title>
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <script hrfe=""></script>
-  <link rel="icon" type="image/png" href="img/logoicon.png">
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Inicio de sesion</title>
+<link href="css/bootstrap.css" rel="stylesheet"/>
+<link href="img/logoicon.png" rel="icon" type="image/png"/>
+<style>
     body{
       margin: 0;
       background-color: #F7F8F9;
@@ -149,11 +147,7 @@ form .botoniniciarsesion{
 
 
 
-  </style>
-
-</head>
-<body>
-                 <style>
+  </style><style>
 
         header {
             background-color: #ffffff;
@@ -380,250 +374,7 @@ form .botoniniciarsesion{
 
 
     
-        </style>
- 
-        <nav id="navegacion">
-            <div id="izquierda">
-                <img src="img/Q parts.png" alt="Logo Q parts">
-            </div>
-            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir menú">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="nav-menu" id="navMenu">
-                <div id="centro">
-                    <a href="index.html">Inicio</a>
-                    <a href="catalogodemarcas.html">Catálogo</a>
-                    <a href="nosotros.html">Nosotros</a>
-                    <a href="contacto.html">Contacto</a>
-                </div>
-
-                <div id="derecha">
-                    <a href="carrito.html"> Cotización</a>
-                    <div class="perfil" id="perfil">
-                        <a href="#" class="perfil"> <img src="img/personas.png" style="position: relative; bottom: 2px;">Perfil <img src="img/drop.png" style="position:relative; bottom: 2px;" id="icono-xd"></a>
-                        <ul class="dropdown">
-                            <li><a href="">Perfil</a></li>
-                            <li><a > <div role="button" id="btnCerrarSesion"> Cerrar Sesion </div> </a></li>
-                        </ul>
-                    </div>
-
-                            <a href="perfil.html" class="drop-tablet" id="perfil2">Perfil</a>
-                            <a class="drop-tablet" id="cerrarsesion2">Cerrar Sesion</a>
-
-                   <a href="Inicio de sesion.html" id="iniciosesion" style="display: none;"><button id="ini"> Iniciar sesión</button></a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburgerBtn = document.getElementById('hamburgerBtn');
-            const navMenu = document.getElementById('navMenu');
-            const icon = hamburgerBtn.querySelector('i');
-
-            hamburgerBtn.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                if (navMenu.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-xmark');
-                } else {
-                    icon.classList.remove('fa-xmark');
-                    icon.classList.add('fa-bars');
-                }
-            });
-        });
-    </script>
-    <script type="module">
-
-
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-     import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
-
-
-   const firebaseConfig = {
-    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
-    authDomain: "sparepartsq-f5f03.firebaseapp.com",
-    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
-    projectId: "sparepartsq-f5f03",
-    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
-    messagingSenderId: "148056463900",
-    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
-    measurementId: "G-XB8Z574X6M"
-  };
-
-    const app = initializeApp(firebaseConfig);
-
-
- import { getAuth, signOut, onAuthStateChanged} from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-
-const auth = getAuth();
-const btnCerrarSesion = document.getElementById("btnCerrarSesion");
-const perfil = document.getElementById("perfil");
-const perfil2 = document.getElementById("perfil2");
-const cerrarsesion = document.getElementById("cerrarsesion2");
-
-btnCerrarSesion.addEventListener("click", () => {
-        Notiflix.Confirm.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        cancelButtonBackground: '#0B2545',
-        okButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-
-    Notiflix.Confirm.show(
-'Cerrar Sesión',
-'¿Deseas cerrar sesión?',
-'Si',
-'No',
-async function okCb() {
-
-      signOut(auth).then(() => {
-
-
-       Notiflix.Report.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        ButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-    Notiflix.Report.success(
-        'Sesion cerrada correctamente!',
-        '',
-        'Continuar',
-        function cb() {
-
-          window.location.href = "index.html";
-          },
-          );
-  }).catch((error) => {
-    
-    console.error("Error al cerrar sesión: ", error);
-    Notiflix.Notify.failure("Ocurrio un error", error);
-  });
-
-},
-function cancelCb() {
-Notiflix.Notify.info("No se ha cerrado sesión");
-},
-{boderRadius: '7px'
-                    },
-);
-
-});
-
-
-cerrarsesion.addEventListener("click", () => {
-        Notiflix.Confirm.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        cancelButtonBackground: '#0B2545',
-        okButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-
-    Notiflix.Confirm.show(
-'Cerrar Sesión',
-'¿Deseas cerrar sesión?',
-'Si',
-'No',
-async function okCb() {
-
-      signOut(auth).then(() => {
-
-
-       Notiflix.Report.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        ButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-    Notiflix.Report.success(
-        'Sesion cerrada correctamente!',
-        '',
-        'Continuar',
-        function cb() {
-
-          window.location.href = "index.html";
-          },
-          );
-  }).catch((error) => {
-    
-    console.error("Error al cerrar sesión: ", error);
-    Notiflix.Notify.failure("Ocurrio un error", error);
-  });
-
-},
-function cancelCb() {
-Notiflix.Notify.info("No se ha cerrado sesión");
-},
-{boderRadius: '7px'
-                    },
-);
-
-});
-
-
-const inicio = document.getElementById('iniciosesion');
-const cotizar = document.getElementById('btn-search');
-
-
-
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        inicio.classList.add("logeado");
-        cerrarsesion.remove("logeado");
-        perfil.remove("deslogear");
-        perfil2.remove("deslogear");
-    } else {
-        inicio.classList.remove("logeado");
-        perfil.add("deslogear");
-        perfil2.add("deslogear");
-        cerrarsesion.add("deslogear")
-    }
-
-});
-        
-    </script>
-
-<br>
-
-    <div
-      class="row justify-content-center align-items-center g-2"
-    >
-      <div class="col-10 offset-1">
-
-        <div class="formulario">
-          <form action="">
-          <h2>Iniciar sesion</h2>
-          <div class="input-contenedor">
-            <input type="text" placeholder="Hola@gmail.com" id="email">
-            <input type="password" placeholder="Contraseña" id="Contraseña">
-          </div>
-          <a href="Registrarse.html" class="help-link">¿Aun no tienes cuenta?</a>
-          <button class="botoniniciarsesion" id="botoniniciarsesion" type="submit">Iniciar sesion</button>
-          <div class="texto-separador"><span>O inicia sesion con</span></div>
-          <button class="autenticacion-opciones" id="Googleboton" type="submit">
-            <img src="https://img.icons8.com/?size=100&id=17949&format=png&color=000000">
-            <span>Google</span>
-          </button>
-          </form>
-          </form>
-        </div>
-
-      </div>
-
-    </div>
-    
-  </div>
-  
-
-   <style>
+        </style><style>
         footer {
   background-color: #034574;
   color: #e2e8f0;
@@ -731,234 +482,78 @@ onAuthStateChanged(auth, (user) => {
     gap: 30px;
   }
 }
-    </style>
-<br>
-<br>
-<br>
+    </style><link href="css/qparts.css" rel="stylesheet"/></head>
+<body data-page="login"><a class="qp-skip" href="#qp-main">Saltar al contenido</a><header class="qp-header"><nav aria-label="Navegación principal" class="qp-nav"><a class="qp-logo" href="index.html"><img alt="" src="img/Q parts.png"/><span>Q-PARTS</span></a><button aria-controls="qp-menu" aria-expanded="false" aria-label="Abrir menú" class="qp-menu-toggle" id="qp-menu-toggle" type="button"><i aria-hidden="true" class="qp-open-icon" data-lucide="menu"></i><i aria-hidden="true" class="qp-close-icon" data-lucide="x"></i></button><div class="qp-menu" id="qp-menu"><a href="index.html"><i data-lucide="house"></i>Inicio</a><a href="catalogodemarcas.html"><i data-lucide="grid-2x2"></i>Catálogo</a><a href="nosotros.html"><i data-lucide="users"></i>Nosotros</a><a href="contacto.html"><i data-lucide="mail"></i>Contacto</a><a href="carrito.html"><i data-lucide="shopping-cart"></i>Cotización <span id="qp-cart-count">0</span></a><a data-auth="in" hidden="" href="perfil.html"><i data-lucide="user-round"></i>Mi perfil</a><button data-auth="in" hidden="" id="qp-logout" type="button"><i data-lucide="log-out"></i>Cerrar sesión</button><a class="qp-login" data-auth="out" href="Inicio de sesion.html"><i data-lucide="log-in"></i>Iniciar sesión</a></div></nav></header><div id="qp-main" tabindex="-1"></div>
+<br/>
+<div class="row justify-content-center align-items-center g-2">
+<div class="col-10 offset-1">
+<div class="formulario">
+<form action="" method="post" novalidate="">
+<h2>Iniciar sesion</h2>
+<div class="input-contenedor">
+<input autocomplete="email" data-validate="email" id="email" maxlength="254" placeholder="Hola@gmail.com" required="" type="email"/>
+<input autocomplete="current-password" data-validate="password" id="Contraseña" maxlength="4096" placeholder="Contraseña" required="" type="password"/>
+</div>
+<a class="help-link" href="Registrarse.html">¿Aun no tienes cuenta?</a>
+<button class="botoniniciarsesion" id="botoniniciarsesion" type="submit">Iniciar sesion</button>
+<div class="texto-separador"><span>O inicia sesion con</span></div>
+<button class="autenticacion-opciones" id="Googleboton" type="button"><i aria-hidden="true" data-lucide="log-in"></i>
+<span>Google</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
 <footer>
-  <div id="piepagina">
-    <div id="seccion1">
-      <img src="img/Q parts.png" alt="Q Parts Logo" style="width: 140px; margin-bottom: 15px;">
-      <p>
+<div id="piepagina">
+<div id="seccion1">
+<img alt="Q Parts Logo" src="img/Q parts.png" style="width: 140px; margin-bottom: 15px;"/>
+<p>
         Es un website de repuestos automotrices del ecosistema de Grupo Q. Consulta, compatibilidad y cotización en un solo lugar.
       </p>
-      <div class="redes-sociales">
-        <a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i class="fa-brands fa-instagram"></i></a>
-        <a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i class="fa-brands fa-linkedin-in"></i></a>
-        <a href="https://www.youtube.com/@grupoqelsalvador23"><i class="fa-brands fa-youtube"></i></a>
-      </div>
-    </div>
-
-    <div id="seccion2">
-      <h5>NAVEGACIÓN</h5>
-      <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="catalogodemarcas.html">Catálogo</a></li>
-        <li><a href="#">Q Bot</a></li>
-        <li><a href="carrito.html">Cotización</a></li>
-        <li><a href="#">Contacto</a></li>
-        <li><a href="Inicio de sesion.html">Iniciar sesión</a></li>
-      </ul>
-    </div>
-
-    <div id="seccion3">
-      <h5>CONTACTO</h5>
-      <ul class="contacto-lista">
-        <li>
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Talleres y sucursales Grupo Q, Centroamérica</span>
-        </li>
-        <li>
-          <i class="fa-solid fa-phone"></i>
-          <span>+503 2248-6400</span>
-        </li>
-        <li>
-          <i class="fa-solid fa-envelope"></i>
-          <span>repuestos@qparts.com</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-
-  <hr id="separador">
-
-  <p id="derechos">
+<div class="redes-sociales">
+<a href="https://www.facebook.com/GrupoQUsadosElSalvador/?locale=es_LA"><i aria-hidden="true" data-lucide="globe"></i></a>
+<a href="https://www.instagram.com/tallergrupoq_sv/?hl=es-la"><i aria-hidden="true" data-lucide="camera"></i></a>
+<a href="https://sv.linkedin.com/company/grupo-q-corporativo"><i aria-hidden="true" data-lucide="briefcase-business"></i></a>
+<a href="https://www.youtube.com/@grupoqelsalvador23"><i aria-hidden="true" data-lucide="circle-play"></i></a>
+</div>
+</div>
+<div id="seccion2">
+<h5>NAVEGACIÓN</h5>
+<ul>
+<li><a href="index.html">Inicio</a></li>
+<li><a href="catalogodemarcas.html">Catálogo</a></li>
+<li><a href="index.html#qbot">Q Bot</a></li>
+<li><a href="carrito.html">Cotización</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+<li><a href="Inicio de sesion.html">Iniciar sesión</a></li>
+</ul>
+</div>
+<div id="seccion3">
+<h5>CONTACTO</h5>
+<ul class="contacto-lista">
+<li>
+<i aria-hidden="true" data-lucide="map-pin"></i>
+<span>Talleres y sucursales Grupo Q, Centroamérica</span>
+</li>
+<li>
+<i aria-hidden="true" data-lucide="phone"></i>
+<span>+503 2248-6400</span>
+</li>
+<li>
+<i aria-hidden="true" data-lucide="mail"></i>
+<span>repuestos@qparts.com</span>
+</li>
+</ul>
+</div>
+</div>
+<hr id="separador"/>
+<p id="derechos">
     © 2026 Q Parts — Grupo Q. Todos los derechos reservados.
   </p>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-
-
-<script type="module"> 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
- import {
-    getAuth,
-    createUserWithEmailAndPassword,
-    updateProfile,
-    GoogleAuthProvider,
-    signInWithPopup,signInWithEmailAndPassword
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
-  import {
-    getDatabase, ref, set, get
-  } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
-   import Notiflix from 'https://cdn.jsdelivr.net/npm/notiflix@3/+esm'; 
-
-
- const firebaseConfig = {
-    apiKey: "AIzaSyCN-IWtXu98vNOiCA9mZ6dAmksJTK2lRDA",
-    authDomain: "sparepartsq-f5f03.firebaseapp.com",
-    databaseURL: "https://sparepartsq-f5f03-default-rtdb.firebaseio.com",
-    projectId: "sparepartsq-f5f03",
-    storageBucket: "sparepartsq-f5f03.firebasestorage.app",
-    messagingSenderId: "148056463900",
-    appId: "1:148056463900:web:84c7a729ae6b2ba2031dd9",
-    measurementId: "G-XB8Z574X6M"
-  };
-
-  const app = initializeApp(firebaseConfig);
-  const auth = getAuth(app);
-  const db = getDatabase(app);
-  const googleProvider = new GoogleAuthProvider();
-
-
-  const LoginE = document.getElementById('botoniniciarsesion');
-
-  LoginE.addEventListener("click", async (e)=> {
-  	e.preventDefault();
-
-  	const email = document.getElementById('email').value;
-  	const contraseña = document.getElementById('Contraseña').value;
-
-  	if (!email || !contraseña) {
-  		Notiflix.Notify.warning('Completa todos los datos');
-  		return;
-  	}
-
-  	try {
-  		const userCrendential = await signInWithEmailAndPassword(auth, email, contraseña);
-  		              Notiflix.Report.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        ButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-        Notiflix.Report.success(
-        '¡Bienvenido de nuevo!',
-        ' ',
-        'Continuar',
-        function cb() {
-
-          window.location.href = "index.html";
-          },
-          );
-  	} catch (error){
-  		manejarErrorFirebase(error);
-  	}
-
-  });
-
-
-  const btnGoogle = document.getElementById("Googleboton");
-
-  btnGoogle.addEventListener("click", async (e) => {
-    e.preventDefault();
-
-    try {
-      const result = await signInWithPopup(auth, googleProvider);
-      const user = result.user;
-
-      
-      const userRef = ref(db, "usuarios/" + user.uid);
-      const snapshot = await get(userRef);
-
-      if (!snapshot.exists()) {
-        await set(userRef, {
-          nombre: user.displayName || "",
-          correo: user.email,
-          dui: "",
-          telefono: user.phoneNumber || "",
-          direccion: "",
-          metodoRegistro: "google",
-          createdAt: new Date().toISOString()
-        });
-
-
-               Notiflix.Report.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        ButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-        Notiflix.Report.success(
-        '¡Bienvenido de nuevo ' + user.displayName.split(' ')[0] +'!' ,
-        '"¡Cuenta creada con Google! Completa tu DUI y teléfono en la sección de perfil',
-        'Continuar',
-        function cb() {
-
-          window.location.href = "index.html";
-          },
-          );
-
-      } else {
-        
-               Notiflix.Report.init({
-        width: '320px',
-        borderRadius: '5px',
-        plainText: true,
-        ButtonBackground: '#D90429',
-        titleColor: '#D90429',
-        });
-        Notiflix.Report.success(
-        '¡Bienvenido de nuevo, ' + user.displayName.split(' ')[0] +'!',
-        ' ',
-        'Continuar',
-        function cb() {
-
-          window.location.href = "index.html";
-          },
-          );
-        
-      }
-
-    } catch (error) {
-      manejarErrorFirebase(error);
-    }
-  });
-
-   function manejarErrorFirebase(error) {
-    console.error(error.code, error.message);
-
-    const mensajes = {
-      "auth/email-already-in-use": "Este correo ya está registrado",
-      "auth/invalid-email": "El correo no es válido",
-      "auth/weak-password": "La contraseña es muy débil",
-      "auth/popup-closed-by-user": "Cerraste la ventana de Google antes de terminar",
-      "auth/invalid-credential": "Contraseña incorrecta"
-    };
-
-    Notiflix.Notify.failure(mensajes[error.code] || "Ocurrió un error: " + error.message);
-  }
-
-
-
-
-
-</script>
-</body>
+<script src="vendor/lucide-1.8.0.min.js"></script><script src="js/app.js" type="module"></script><noscript>Activa JavaScript para iniciar sesión, buscar repuestos y usar la cotización.</noscript></body>
 </html>
