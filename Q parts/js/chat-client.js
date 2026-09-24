@@ -83,7 +83,7 @@ export function initChatClient({ input, send, messages }) {
     pending = true;
     messages.querySelectorAll('.qp-chat-retry').forEach(button => button.remove());
     if (!retry) append(bubble(text, 'user'));
-    const loading = bubble('Consultando el catálogo…');
+    const loading = bubble('Pensando...');
     loading.classList.add('qp-chat-loading');
     append(loading);
     send.disabled = true;

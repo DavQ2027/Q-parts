@@ -76,6 +76,33 @@ export async function createQuotePDF(data, items, reference, date = new Date()) 
     doc.setFont('helvetica', label === 'TOTAL' ? 'bold' : 'normal');
     doc.text(amount(value), right, y, { align: 'right' }); y += 8.5;
   }
+
+
+const notaY = Math.max(y + 10, bottom - 30);
+doc.setDrawColor(150);
+doc.setLineWidth(0.3);
+doc.line(
+  10,
+  notaY - 6,
+  right,
+  notaY - 6
+);
+doc.setTextColor(0);
+doc.setFont('helvetica', 'bold');
+doc.setFontSize(9);
+doc.text(
+  'NOTA:',
+  10,
+  notaY
+);
+doc.setFont('helvetica', 'normal');
+doc.setFontSize(8.5);
+
+doc.text(
+  'Este PDF fue creado simplemente con fines educativos, no es una cotización real.',
+  10,
+  notaY + 6
+);
   const pages = doc.getNumberOfPages();
   for (let page = 2; page <= pages; page++) {
     doc.setPage(page); doc.setTextColor(0); doc.setFont('helvetica', 'bold'); doc.setFontSize(11);
